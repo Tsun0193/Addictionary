@@ -1,13 +1,14 @@
 package com.project.quangminh;
 
-public class Word implements Comparable<Word>{
+public class Word implements Comparable<Word> {
     private String targetWord;
     private String meaningWord;
 
-    public Word(){
+    public Word() {
 
     }
-    public Word(String targetWord,String meaningWord){
+
+    public Word(String targetWord, String meaningWord) {
         this.targetWord = targetWord;
         this.meaningWord = meaningWord;
     }
