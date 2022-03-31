@@ -26,6 +26,19 @@ public class DictionaryManagement {
         }
     }
 
+    public static boolean internetConnection() {
+        boolean flag = true;
+        try {
+            String url = "www.google.com";
+            conn = DriverManager.getConnection(url);
+            System.out.println("Connection to Internet has been established.");
+        } catch (Exception e) {
+            flag = false;
+            System.out.println(e.getMessage());
+        }
+        return flag;
+    }
+
     public static void findSimilarWord(String word) {
         ArrayList<Integer> res = new ArrayList<Integer>();
         myTrie.reset();
