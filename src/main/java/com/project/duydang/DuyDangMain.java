@@ -1,5 +1,6 @@
 package com.project.duydang;
 
+import com.project.dodung.DictionaryManagement;
 import com.project.dodung.dictionaryInput;
 import com.project.main.Main;
 import java.util.*;
@@ -13,7 +14,7 @@ public class DuyDangMain extends Main {
     /**
      * Declaration variables.
      */
-    private final dictionaryInput inputbox;
+    private final DictionaryManagement manager = new DictionaryManagement();
     private final JFrame Frame = new JFrame();
     private final JDialog addWord = new JDialog(Frame, "Add word:", true);
     private final JDialog delWord = new JDialog(Frame, "Delete Word?", true);
