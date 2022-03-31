@@ -56,6 +56,17 @@ public class DuyDangMain extends Main {
         this.manager = manager;
     }
 
+    public void borderDesign(JTextArea area) {
+        area.setBorder(BorderFactory.createLineBorder(new Color(25,25,25)));
+    }
+
+    public void buttonDesign(JButton button) {
+        button.setBackground(new Color(128,128,128));
+        button.setFocusPainted(false);
+        button.setBorderPainted(false);
+    }
+
+
 
     @Override
     public void run() {
