@@ -14,7 +14,7 @@ public class DuyDangMain extends Main {
     /**
      * Declaration variables.
      */
-    private final DictionaryManagement manager = new DictionaryManagement();
+    private DictionaryManagement manager = new DictionaryManagement();
     private final JFrame Frame = new JFrame();
     private final JDialog addWord = new JDialog(Frame, "Add word:", true);
     private final JDialog delWord = new JDialog(Frame, "Delete Word?", true);
@@ -51,6 +51,11 @@ public class DuyDangMain extends Main {
     JList<String> Strings = new JList<>();
     JScrollPane stringsScroll = new JScrollPane(Strings);
     JScrollPane definitionsScroll = new JScrollPane(definitionHere);
+
+    public DuyDangMain(DictionaryManagement manager) {
+        this.manager = manager;
+    }
+
 
     @Override
     public void run() {
