@@ -8,14 +8,12 @@ import com.project.support.SupportMain;
 
 public abstract class Main {
 
-    private static com.project.dodung.DictionaryManagement DictionaryManagement;
-
     abstract public void run();
 
     public static void main(String[] args){
         //System.out.println("alo");
         DoDungMain doDungMain = new DoDungMain();
-        DuyDangMain duyDangMain = new DuyDangMain(DictionaryManagement);
+        DuyDangMain duyDangMain = new DuyDangMain();
         QuagMinhMain quagMinhMain = new QuagMinhMain();
         SupportMain supportMain = new SupportMain();
         doDungMain.run();
