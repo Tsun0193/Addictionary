@@ -99,4 +99,7 @@ public class DictionaryApplication {
 
         sentenceTransB.addActionListener(e -> translateSentence.setVisible(true));
     }
+    public void initAddWordDialog(){
+
+    }
 }

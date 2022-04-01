@@ -51,6 +51,24 @@ public class DictionaryManagement {
             System.out.println(re + " : " + DictionaryManagement.selectWordWithId(re));
         }
     }
+
+    /**
+     * Quang Minh thêm để lấy xâu các similarWords để đưa lên màn hình(nhưng mà chưa được, Dũng fix hộ vói :( )
+     */
+    public static String stringSimilarWords(String word) {
+        String ans = "";
+        ArrayList<Integer> res = new ArrayList<Integer>();
+        myTrie.reset();
+        for(int i = 0; i < word.length(); ++i) {
+            myTrie.traverseNextChar(word.charAt(i));
+        }
+        myTrie.findSimilar(res,myTrie.getLastCurNode());
+        ans = ans + "Similar word to " + word + ":\n";
+        for (Integer re : res) {
+            ans = ans + DictionaryManagement.selectWordWithId(re) + " ";
+        }
+        return ans;
+    }
     public static void buildTrie() {
         String sql = "SELECT id, word FROM av";
 
