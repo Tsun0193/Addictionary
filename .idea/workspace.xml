@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bb3ffc9-46c0-4061-818b-8d974bfa4f25" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/duydang/DictionaryApplication.java" afterDir="false" />
+    <list default="true" id="2bb3ffc9-46c0-4061-818b-8d974bfa4f25" name="Changes" comment="Quang Minh add test UI Form">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/quangminh/addWord.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/quangminh/addWord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/dodung/DictionaryManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/dodung/DictionaryManagement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/duydang/DuyDangMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/duydang/DuyDangMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/quangminh/DictionaryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/quangminh/DictionaryApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +52,33 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="340" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="227" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/project/quangminh" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\hoc tap\Addictionary\src\main\java\com\project\quangminh" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.project.quangminh" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.addWord">
+    <configuration name="DictionaryApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.project.quangminh.DictionaryApplication" />
+      <module name="untitled" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.project.quangminh.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DuyDangMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.project.duydang.DuyDangMain" />
       <module name="untitled" />
@@ -65,8 +92,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.project.main.Main" />
+      <module name="untitled" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.project.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="addWord" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.project.quangminh.addWord" />
+      <module name="untitled" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.project.quangminh.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.addWord" />
+        <item itemvalue="Application.DictionaryApplication" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.DuyDangMain" />
       </list>
     </recent_temporary>
@@ -80,6 +136,14 @@
       <option name="presentableId" value="Default" />
       <updated>1648570669767</updated>
     </task>
+    <task id="LOCAL-00001" summary="Quang Minh add test UI Form">
+      <created>1648806980320</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1648806980320</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -95,5 +159,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Quang Minh add test UI Form" />
+    <option name="LAST_COMMIT_MESSAGE" value="Quang Minh add test UI Form" />
   </component>
 </project>
