@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Objects;
 
 
 public class DictionaryManagement {
@@ -113,9 +114,11 @@ public class DictionaryManagement {
         }
     }
 
-    public static void deleteWord(Word w) {
+    public static void deleteWord(Word w) throws nonExistException{
+        if(w.getId() == 0 || Objects.equals(w.getWord(), "")) {
+            throw new nonExistException("Word does not exist");
+        }
         String sql = "DELETE FROM av WHERE id = ?";
-        if(w.getId() == 0) return;
         // Delete on trie
         myTrie.deleteWord(w.getWord());
         try (PreparedStatement preStatement = conn.prepareStatement(sql)) {
@@ -172,7 +175,10 @@ public class DictionaryManagement {
         return ret;
     }
 
-    public static void insertWordToTable(Word w) {
+    public static void insertWordToTable(Word w) throws existException{
+        if(getWordId(w) <= 0) {
+            throw new existException(w.getWord() + " already exists");
+        }
         String sql = "INSERT INTO av(id,word,html) VALUES(?,?,?)";
         ++maxWordId;
         myTrie.addWord(w.getWord(),w.getId());
