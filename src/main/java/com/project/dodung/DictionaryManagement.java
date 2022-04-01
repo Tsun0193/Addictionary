@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+
 public class DictionaryManagement {
     /**
      * Connect to a sample database
@@ -26,6 +27,8 @@ public class DictionaryManagement {
         }
     }
 
+
+
     public static boolean internetConnection() {
         boolean flag = true;
         try {
@@ -39,36 +42,30 @@ public class DictionaryManagement {
         return flag;
     }
 
-    public static void findSimilarWord(String word) {
-        ArrayList<Integer> res = new ArrayList<Integer>();
+    /**
+     * Thử lại đi ;-; không chắc lắm đâu.
+     */
+    public static ArrayList<Pair<Integer,String> > stringSimilarWords(Word w) {
+        ArrayList<Pair<Integer,String> > res = new ArrayList<>();
         myTrie.reset();
-        for(int i = 0; i < word.length(); ++i) {
-            myTrie.traverseNextChar(word.charAt(i));
+        String word = w.getWord();
+        int lastPosOnTrie = myTrie.traverseNonInsert(word);
+        if(lastPosOnTrie == 0 && word.length() > 0) {
+            return res;
         }
-        myTrie.findSimilar(res,myTrie.getLastCurNode());
+        ArrayList<Integer> ListId = new ArrayList<>();
+        myTrie.findSimilar(ListId,lastPosOnTrie);
+        Pair<Integer,String> toAdd = new Pair<>();
         System.out.println("Similar word to " + word + ":");
-        for (Integer re : res) {
-            System.out.println(re + " : " + DictionaryManagement.selectWordWithId(re));
+        for (Integer re : ListId) {
+            toAdd.setKey(re);
+            toAdd.setValue(DictionaryManagement.selectWordWithId(re));
+            res.add(toAdd);
+            System.out.println(DictionaryManagement.selectWordWithId(re));
         }
+        return res;
     }
 
-    /**
-     * Quang Minh thêm để lấy xâu các similarWords để đưa lên màn hình(nhưng mà chưa được, Dũng fix hộ vói :( )
-     */
-    public static String stringSimilarWords(String word) {
-        String ans = "";
-        ArrayList<Integer> res = new ArrayList<Integer>();
-        myTrie.reset();
-        for(int i = 0; i < word.length(); ++i) {
-            myTrie.traverseNextChar(word.charAt(i));
-        }
-        myTrie.findSimilar(res,myTrie.getLastCurNode());
-        ans = ans + "Similar word to " + word + ":\n";
-        for (Integer re : res) {
-            ans = ans + DictionaryManagement.selectWordWithId(re) + " ";
-        }
-        return ans;
-    }
     public static void buildTrie() {
         String sql = "SELECT id, word FROM av";
 
@@ -77,7 +74,7 @@ public class DictionaryManagement {
 
             // loop through the result set
             while (rs.next()) {
-                myTrie.addWord(rs.getString("word"),rs.getInt("id"));
+                myTrie.addWord(Word.normalizeWord(rs.getString("word")),rs.getInt("id"));
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -102,13 +99,13 @@ public class DictionaryManagement {
 
 
 
-    public static void updateWord(int id, String data){
+    public static void updateWord(Word w){
         String sql = "UPDATE av SET html = ? "
                 + "WHERE id = ?";
-
+        if(w.getId() == 0) return;
         try (PreparedStatement preStatement = conn.prepareStatement(sql)) {
-            preStatement.setString(1, data);
-            preStatement.setInt(2, id);
+            preStatement.setString(1, w.getHtml());
+            preStatement.setInt(2, w.getId());
             // update
             preStatement.executeUpdate();
         } catch (SQLException e) {
@@ -116,11 +113,13 @@ public class DictionaryManagement {
         }
     }
 
-    public static void deleteWord(int id) {
+    public static void deleteWord(Word w) {
         String sql = "DELETE FROM av WHERE id = ?";
-
+        if(w.getId() == 0) return;
+        // Delete on trie
+        myTrie.deleteWord(w.getWord());
         try (PreparedStatement preStatement = conn.prepareStatement(sql)) {
-            preStatement.setInt(1, id);
+            preStatement.setInt(1, w.getId());
             preStatement.executeUpdate();
 
         } catch (SQLException e) {
@@ -130,8 +129,22 @@ public class DictionaryManagement {
 
     public static String selectWordWithId(int id) {
         String sql = "SELECT word FROM av WHERE id = ?";
+        if(id == 0) return "";
+        try (PreparedStatement preStatement = conn.prepareStatement(sql)) {
+            preStatement.setInt(1, id);
+            try(ResultSet rs = preStatement.executeQuery()) {
+                return Word.normalizeWord(rs.getString("word"));
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return "";
+    }
 
-        try (PreparedStatement preStatement = conn.prepareStatement(sql);) {
+    public static String selectWordHtmlWithId(int id) {
+        String sql = "SELECT html FROM av WHERE id = ?";
+        if(id == 0) return "";
+        try (PreparedStatement preStatement = conn.prepareStatement(sql)) {
             preStatement.setInt(1, id);
             try(ResultSet rs = preStatement.executeQuery()) {
                 return rs.getString("word");
@@ -142,21 +155,46 @@ public class DictionaryManagement {
         return "";
     }
 
-    public static void insertWordToTable(int id, String word, String html,String description, String pronounce) {
-        String sql = "INSERT INTO av(id,word,html,description,pronounce) VALUES(?,?,?,?,?)";
-
+    public static Pair<String,String> selectWordAndHtmlWithId(int id) {
+        String sql = "SELECT word,html FROM av WHERE id = ?";
+        Pair<String,String> ret = new Pair<>();
+        if(id == 0) return ret;
         try (PreparedStatement preStatement = conn.prepareStatement(sql)) {
             preStatement.setInt(1, id);
-            preStatement.setString(2,word);
-            preStatement.setString(3, html);
-            preStatement.setString(4, description);
-            preStatement.setString(5, pronounce);
+            try(ResultSet rs = preStatement.executeQuery()) {
+                ret.setKey(Word.normalizeWord(rs.getString("word")));
+                ret.setValue(rs.getString("html"));
+                return ret;
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return ret;
+    }
+
+    public static void insertWordToTable(Word w) {
+        String sql = "INSERT INTO av(id,word,html) VALUES(?,?,?)";
+        ++maxWordId;
+        myTrie.addWord(w.getWord(),w.getId());
+        try (PreparedStatement preStatement = conn.prepareStatement(sql)) {
+            preStatement.setInt(1, w.getId());
+            preStatement.setString(2,w.getWord());
+            preStatement.setString(3, w.getHtml());
             preStatement.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
 
+    public static int getWordId(Word w) {
+        return myTrie.findWordId(w.getWord());
+    }
+
+    public static int getMaxWordId() {
+        return maxWordId;
+    }
     public static Connection conn = null;
     private static Trie myTrie = new Trie();
+    /** Sẽ sửa lại nếu có sort word khi tắt chương trình. */
+    private static int maxWordId = 108854;
 }
