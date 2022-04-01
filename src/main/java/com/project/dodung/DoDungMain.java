@@ -10,8 +10,12 @@ public class DoDungMain extends Main {
     public void run(){
         DictionaryManagement.connect();
         DictionaryManagement.buildTrie();
-        DictionaryManagement.findSimilarWord("aban");
-        DictionaryManagement.findSimilarWord("cut");
+        Word w = new Word("aban");
+        Word w1 = new Word("cut");
+        System.out.println(w.getId());
+        System.out.println(w1.getId());
+        DictionaryManagement.stringSimilarWords(w);
+        DictionaryManagement.stringSimilarWords(w1);
     }
 
 }
