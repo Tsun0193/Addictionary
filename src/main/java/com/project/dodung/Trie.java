@@ -21,9 +21,8 @@ public class Trie {
         return nextChar;
     }
 
-    /** Thêm một từ mới vào cây Trie. */
-    public void addWord(String word,int wordId) {
-
+    /** Trả lại vị trí của word trên cây Trie. */
+    public int traverse(String word) {
         int pos = 0;
         int nextChar = 0;
         for(int i = 0; i < word.length(); ++i) {
@@ -36,9 +35,41 @@ public class Trie {
             }
             pos = trie[pos].getNext()[nextChar];
         }
-        if (trie[pos].getId() == 0) {
+        return pos;
+    }
+
+    public int traverseNonInsert(String word) {
+        int pos = 0;
+        int nextChar = 0;
+        for(int i = 0; i < word.length(); ++i) {
+            nextChar = getValidIntChar(word.charAt(i));
+            if(nextChar < 0) continue;
+            if(trie[pos].getNext()[nextChar] == 0) {
+                return 0;
+            }
+            pos = trie[pos].getNext()[nextChar];
+        }
+        return pos;
+    }
+
+    /** Thêm một từ mới vào cây Trie. */
+    public void addWord(String word,int wordId) {
+        int pos = traverse(word);
+        if(trie[pos].getId() == 0) {
             trie[pos].setId(wordId);
         }
+    }
+
+    /** Tìm Word Id. */
+    public int findWordId(String word) {
+        int pos = traverseNonInsert(word);
+        return trie[pos].getId();
+    }
+
+    /** Xóa từ khỏi cây Trie. */
+    public void deleteWord(String word) {
+        int pos = traverseNonInsert(word);
+        trie[pos].setId(0);
     }
 
     /** Di chuyển vị trí hiện tại khi từ ta đang có được thêm chữ cái mới. */
