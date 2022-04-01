@@ -30,22 +30,34 @@ public class DictionaryCommandline {
         Word w = new Word(word);
         return DictionaryManagement.selectWordAndHtmlWithId(w.getId());
     }
-
+    // Cần check xem từ có tồn tại hay không
     /** Insert new word to database
      * @param word word to be inserted
      * @param html word's content(html)
      */
-    public static void insertWord(String word,String html) {
+    public static boolean insertWord(String word,String html) {
         Word w = new Word(word,html,DictionaryManagement.getMaxWordId()+1);
-        DictionaryManagement.insertWordToTable(w);
+        try{
+            DictionaryManagement.insertWordToTable(w);
+        }
+        catch(existException e) {
+            return false;
+        }
+        return true;
     }
 
     /** Delete word from database
      * @param id word's id
      */
-    public static void deleteWord(int id) {
+    public static boolean deleteWord(int id) {
         Word w = new Word(DictionaryManagement.selectWordWithId(id),id);
-        DictionaryManagement.deleteWord(w);
+        try{
+            DictionaryManagement.deleteWord(w);
+        }
+        catch(nonExistException e) {
+            return false;
+        }
+        return true;
     }
 
 }
