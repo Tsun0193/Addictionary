@@ -1,24 +1,14 @@
 package com.project.quangminh;
-import com.project.dodung.DictionaryManagement;
-import com.project.dodung.*;
+
 import javax.swing.*;
 import java.awt.event.*;
 
-public class addWord extends JDialog {
+public class delWord extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
-    private JTextField newPronounTextfield;
-    private JTextField newWordTextField;
-    private JTextField newDefTextField;
-    private JPanel newWordPanel;
-    private JLabel newWordLabel;
-    private JPanel newPronounPanel;
-    private JLabel newPronounLabel;
-    private JPanel newDefPanel;
-    private JLabel newDefLabel;
 
-    public addWord() {
+    public delWord() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
@@ -52,15 +42,7 @@ public class addWord extends JDialog {
     }
 
     private void onOK() {
-        Word w = new Word(newWordTextField.getText(),1);
-        try{
-            System.out.println(w.getWord());
-            DictionaryManagement.insertWordToTable(w);
-        }
-        catch (existException e){
-            JOptionPane.showMessageDialog(contentPane,e.getMessage());
-        }
-        //DictionaryManagement.insertWordToTable();
+        // add your code here
         dispose();
     }
 
@@ -70,7 +52,7 @@ public class addWord extends JDialog {
     }
 
     public static void main(String[] args) {
-        addWord dialog = new addWord();
+        delWord dialog = new delWord();
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);

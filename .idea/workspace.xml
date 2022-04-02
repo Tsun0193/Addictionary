@@ -5,13 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2bb3ffc9-46c0-4061-818b-8d974bfa4f25" name="Changes" comment="Quang Minh add test UI Form">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/quangminh/addWord.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/quangminh/addWord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/quangminh/DictionaryApplication.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/quangminh/delWord.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/quangminh/delWord.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/duydang/DuyDangMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/duydang/DuyDangMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/dodung/DictionaryManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/dodung/DictionaryManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/quangminh/Dictionary.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/quangminh/DictionaryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/quangminh/DictionaryApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/quangminh/UI.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/quangminh/Word.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/quangminh/addWord.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/quangminh/addWord.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/quangminh/addWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/quangminh/addWord.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,10 +56,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="340" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="341" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="227" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/project/quangminh" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../javaSwing" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -65,7 +69,7 @@
       <recent name="com.project.quangminh" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.addWord">
+  <component name="RunManager" selected="Application.DictionaryApplication">
     <configuration name="DictionaryApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.project.quangminh.DictionaryApplication" />
       <module name="untitled" />
@@ -120,8 +124,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.addWord" />
         <item itemvalue="Application.DictionaryApplication" />
+        <item itemvalue="Application.addWord" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.DuyDangMain" />
       </list>
@@ -143,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648806980320</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Quang Minh add test UI Form">
+      <created>1648824974384</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1648824974384</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
