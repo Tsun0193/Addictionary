@@ -2,9 +2,7 @@ package com.project.main;
 
 import com.project.dodung.DictionaryManagement;
 import com.project.dodung.DoDungMain;
-import com.project.duydang.DuyDangMain;
-import com.project.quangminh.QuagMinhMain;
-import com.project.support.SupportMain;
+import com.project.UI.UI_Main;
 
 public abstract class Main {
 
@@ -12,9 +10,9 @@ public abstract class Main {
 
     public static void main(String[] args){
 
-        QuagMinhMain quagMinhMain = new QuagMinhMain();
+        UI_Main ui_main = new UI_Main();
 
-        quagMinhMain.run();
+        ui_main.run();
 
     }
 

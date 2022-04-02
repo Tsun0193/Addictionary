@@ -5,17 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2bb3ffc9-46c0-4061-818b-8d974bfa4f25" name="Changes" comment="Quang Minh add test UI Form">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/quangminh/DictionaryApplication.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/quangminh/delWord.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/quangminh/delWord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/dodung/DictionaryManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/dodung/DictionaryManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/quangminh/Dictionary.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/quangminh/DictionaryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/quangminh/DictionaryApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/quangminh/UI.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/quangminh/Word.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/quangminh/addWord.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/quangminh/addWord.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/quangminh/addWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/quangminh/addWord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/DictionaryApplication.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/DictionaryApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/addWord.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/addWord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/delWord.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/delWord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/duydang/DictionaryApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/duydang/DuyDangMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/quangminh/DictionaryApplication.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/quangminh/DictionaryApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/quangminh/QuagMinhMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/quangminh/addWord.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/quangminh/addWord.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/quangminh/delWord.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/quangminh/delWord.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/support/SupportMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/UI_Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/support/page/Page.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/support/page/PageManager.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
