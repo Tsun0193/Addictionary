@@ -5,15 +5,22 @@ import java.awt.event.*;
 
 public class delWord extends JDialog {
     private JPanel contentPane;
-    private JButton buttonOK;
+    private JButton buttonApply;
     private JButton buttonCancel;
+    private JPanel YN;
+    private JLabel delWordLabel;
+    private JPanel Context;
+    private JLabel input;
+    private JTextField textField1;
+    private JPanel Suggestion;
+    private JLabel SuggestionLabel;
 
     public delWord() {
         setContentPane(contentPane);
         setModal(true);
-        getRootPane().setDefaultButton(buttonOK);
+        getRootPane().setDefaultButton(buttonApply);
 
-        buttonOK.addActionListener(new ActionListener() {
+        buttonApply.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onOK();
             }

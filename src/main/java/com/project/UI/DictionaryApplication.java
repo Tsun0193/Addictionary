@@ -43,13 +43,19 @@ public class DictionaryApplication extends JFrame {
         this.setContentPane(appPanel);
         this.pack();
 
-        /**
-         * click addWordButton
-         */
         addWordButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 addWord dialog = new addWord();
+                dialog.pack();
+                dialog.setVisible(true);
+            }
+        });
+
+        delWordButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                delWord dialog = new delWord();
                 dialog.pack();
                 dialog.setVisible(true);
             }
