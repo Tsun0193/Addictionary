@@ -1,4 +1,4 @@
-package com.project.quangminh;
+package com.project.UI;
 import com.project.dodung.DictionaryManagement;
 import com.project.dodung.*;
 import javax.swing.*;

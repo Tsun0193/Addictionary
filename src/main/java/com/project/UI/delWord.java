@@ -1,4 +1,4 @@
-package com.project.quangminh;
+package com.project.UI;
 
 import javax.swing.*;
 import java.awt.event.*;
