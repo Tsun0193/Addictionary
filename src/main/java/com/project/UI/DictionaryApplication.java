@@ -21,10 +21,6 @@ public class DictionaryApplication extends JFrame {
     private JButton translWordButton;
     private JLabel transWordLabel;
 
-    private JPanel transSentencePanel;
-    private JButton transSentenceButton;
-    private JLabel transSentenceLabel;
-
     private JPanel addWordPanel;
     private JLabel addWordLabel;
     private JButton addWordButton;
@@ -32,6 +28,11 @@ public class DictionaryApplication extends JFrame {
     private JPanel delWordPanel;
     private JLabel delWordLabel;
     private JButton delWordButton;
+    private JPanel transSentencePanel;
+    private JLabel transSentenceLabel;
+    private JButton transSentenceButton;
+    private JTextField textField1;
+    private JTextField textField2;
 
     /**
      * khởi chạy (cũng không hiểu mớ này lắm)
@@ -66,4 +67,5 @@ public class DictionaryApplication extends JFrame {
         JFrame frame = new DictionaryApplication("Dictionary pro vjp");
         frame.setVisible(true);
     }
+
 }
