@@ -3,8 +3,6 @@ package com.project.UI;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.InputMethodEvent;
-import java.awt.event.InputMethodListener;
 
 /**
  * cửa sổ chính có 4 mục: transWord,transSentence,addWord và delWord.
@@ -36,11 +34,12 @@ public class DictionaryApplication extends JFrame {
     private JLabel transSentenceLabel;
     private JButton transSentenceButton;
     private JTextField transWordText;
-    private JTextField textField2;
+    private JTextField transSentenceText;
     /**
      * Input from Translate Word Area.
      */
     public static String str;
+    public static String sentence;
 
     /**
      * khởi chạy (cũng không hiểu mớ này lắm)
@@ -80,10 +79,24 @@ public class DictionaryApplication extends JFrame {
             }
         });
 
+
+        transSentenceButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                sentence = transSentenceText.getText();
+                transSentence dialog = new transSentence();
+                dialog.pack();
+                dialog.setVisible(true);
+            }
+        });
     }
 
     public static String getStr() {
         return str;
+    }
+
+    public static String getSentence() {
+        return sentence;
     }
 
     public static void main(String[] args){

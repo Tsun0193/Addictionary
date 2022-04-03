@@ -3,16 +3,15 @@ package com.project.UI;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class transWord extends JDialog {
+public class transSentence extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
-    private JLabel transWordLabel;
+    private JLabel transSentenceLabel;
     private JLabel Input;
-    private JTextField textField1;
-    private JTextField transWordTranslation;
+    private JTextField transSentenceTranslation;
 
-    public transWord() {
+    public transSentence() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
@@ -44,8 +43,7 @@ public class transWord extends JDialog {
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
-        Input.setText(DictionaryApplication.getStr());
-
+        Input.setText(DictionaryApplication.getSentence());
     }
 
     private void onOK() {
@@ -58,11 +56,8 @@ public class transWord extends JDialog {
         dispose();
     }
 
-
-
-
     public static void main(String[] args) {
-        transWord dialog = new transWord();
+        transSentence dialog = new transSentence();
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);

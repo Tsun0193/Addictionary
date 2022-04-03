@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bb3ffc9-46c0-4061-818b-8d974bfa4f25" name="Changes" comment="Design and Recolor User Interface.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/transWord.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/transWord.java" afterDir="false" />
+    <list default="true" id="2bb3ffc9-46c0-4061-818b-8d974bfa4f25" name="Changes" comment="Get Input ready for Translation.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/transSentence.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/transSentence.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/DictionaryApplication.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/DictionaryApplication.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/DictionaryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/DictionaryApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/transWord.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/transWord.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/transWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/transWord.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648985916309</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Get Input ready for Translation.">
+      <created>1649002954069</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1649002954069</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -188,6 +197,7 @@
     <MESSAGE value="Quang Minh add test UI Form" />
     <MESSAGE value="updated nothing." />
     <MESSAGE value="Design and Recolor User Interface." />
-    <option name="LAST_COMMIT_MESSAGE" value="Design and Recolor User Interface." />
+    <MESSAGE value="Get Input ready for Translation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Get Input ready for Translation." />
   </component>
 </project>
