@@ -3,16 +3,17 @@ import com.project.dodung.DictionaryManagement;
 import com.project.dodung.*;
 import javax.swing.*;
 import java.awt.event.*;
+import com.project.UI.DictionaryApplication;
 
 public class addWord extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
-    private JTextField newPronounTextfield;
-    private JTextField newWordTextField;
-    private JTextField newDefTextField;
-    private JPanel newWordPanel;
-    private JLabel newWordLabel;
+    public JTextField addPronounTextfield;
+    public JTextField addWordText;
+    public JTextField addDefTextField;
+    private JPanel addWordPanel;
+    private JLabel addWordLabel;
     private JPanel newPronounPanel;
     private JLabel newPronounLabel;
     private JPanel newDefPanel;
@@ -49,10 +50,12 @@ public class addWord extends JDialog {
                 onCancel();
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
+
     }
 
     private void onOK() {
-        Word w = new Word(newWordTextField.getText(),1);
+        Word w = new Word(addWordText.getText(),1);
         try{
             System.out.println(w.getWord());
             DictionaryManagement.insertWordToTable(w);

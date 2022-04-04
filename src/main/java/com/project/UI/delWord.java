@@ -11,7 +11,7 @@ public class delWord extends JDialog {
     private JLabel delWordLabel;
     private JPanel Context;
     private JLabel input;
-    private JTextField textField1;
+    public JTextField delWordText;
     private JPanel Suggestion;
     private JLabel SuggestionLabel;
 
@@ -46,6 +46,8 @@ public class delWord extends JDialog {
                 onCancel();
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
+
     }
 
     private void onOK() {

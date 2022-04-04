@@ -27,18 +27,29 @@ public class DictionaryApplication extends JFrame {
     private JLabel addWordLabel;
     private JButton addWordButton;
 
+
     private JPanel delWordPanel;
     private JLabel delWordLabel;
     private JButton delWordButton;
+
+
     private JPanel transSentencePanel;
     private JLabel transSentenceLabel;
     private JButton transSentenceButton;
+
+
     private JTextField transWordText;
     private JTextField transSentenceText;
+    private JButton editWordButton;
     /**
-     * Input from Translate Word Area.
+     * Input from Different Area.
      */
-    public static String str;
+    public static String addStr;
+    public static String addPro;
+    public static String addDef;
+    public static String delStr;
+    public static String editStr;
+    public static String transStr;
     public static String sentence;
 
     /**
@@ -72,7 +83,7 @@ public class DictionaryApplication extends JFrame {
         transWordButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                str = transWordText.getText();
+                transStr = transWordText.getText();
                 transWord dialog = new transWord();
                 dialog.pack();
                 dialog.setVisible(true);
@@ -89,10 +100,18 @@ public class DictionaryApplication extends JFrame {
                 dialog.setVisible(true);
             }
         });
+        editWordButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                editWord dialog = new editWord();
+                dialog.pack();
+                dialog.setVisible(true);
+            }
+        });
     }
 
-    public static String getStr() {
-        return str;
+    public static String getTransStr() {
+        return transStr;
     }
 
     public static String getSentence() {

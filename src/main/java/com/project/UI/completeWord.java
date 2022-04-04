@@ -2,17 +2,26 @@ package com.project.UI;
 
 import javax.swing.*;
 import java.awt.event.*;
+import com.project.UI.editWord;
+import com.project.UI.DictionaryApplication;
 
-public class transWord extends JDialog {
+public class completeWord extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
-    private JLabel transWordLabel;
-    private JLabel Input;
-    private JTextField textField1;
-    private JTextField transWordTranslation;
+    private JLabel completeLabel;
+    private JLabel targetEditWord;
+    private JLabel pronounceEditWord;
+    public JTextField editProText;
+    private JLabel defEditWord;
+    public JTextField editDefText;
+    private JLabel targetEditText;
 
-    public transWord() {
+    public static String inputEditPro;
+    public static String inputEditDef;
+
+    public completeWord() {
+
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
@@ -43,9 +52,6 @@ public class transWord extends JDialog {
                 onCancel();
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-
-        Input.setText(DictionaryApplication.getTransStr());
-
     }
 
     private void onOK() {
@@ -58,11 +64,8 @@ public class transWord extends JDialog {
         dispose();
     }
 
-
-
-
     public static void main(String[] args) {
-        transWord dialog = new transWord();
+        completeWord dialog = new completeWord();
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);
