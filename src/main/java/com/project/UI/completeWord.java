@@ -26,7 +26,7 @@ public class completeWord extends JDialog {
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
 
-        targetEditWord.setText("Target: "+DictionaryApplication.editStr);
+        targetEditWord.setText("Word: "+DictionaryApplication.editStr);
 
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

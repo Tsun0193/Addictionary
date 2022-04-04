@@ -189,7 +189,7 @@
           </grid>
         </constraints>
         <properties/>
-        <border type="none"/>
+        <border type="etched"/>
         <children>
           <component id="bef18" class="javax.swing.JLabel">
             <constraints>
