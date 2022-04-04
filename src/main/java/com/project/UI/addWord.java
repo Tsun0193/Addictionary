@@ -9,9 +9,9 @@ public class addWord extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
-    public JTextField addPronounTextfield;
-    public JTextField addWordText;
-    public JTextField addDefTextField;
+    private JTextField addPronounTextfield;
+    private JTextField addWordText;
+    private JTextField addDefTextField;
     private JPanel addWordPanel;
     private JLabel addWordLabel;
     private JPanel newPronounPanel;

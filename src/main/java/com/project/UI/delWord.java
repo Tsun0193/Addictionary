@@ -11,7 +11,7 @@ public class delWord extends JDialog {
     private JLabel delWordLabel;
     private JPanel Context;
     private JLabel input;
-    public JTextField delWordText;
+    private JTextField delWordText;
     private JPanel Suggestion;
     private JLabel SuggestionLabel;
 

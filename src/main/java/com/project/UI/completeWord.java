@@ -12,9 +12,9 @@ public class completeWord extends JDialog {
     private JLabel completeLabel;
     private JLabel targetEditWord;
     private JLabel pronounceEditWord;
-    public JTextField editProText;
+    private JTextField editProText;
     private JLabel defEditWord;
-    public JTextField editDefText;
+    private JTextField editDefText;
     private JLabel targetEditText;
 
     public static String inputEditPro;
@@ -25,6 +25,8 @@ public class completeWord extends JDialog {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
+
+        targetEditWord.setText("Target: "+DictionaryApplication.editStr);
 
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
