@@ -5,24 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2bb3ffc9-46c0-4061-818b-8d974bfa4f25" name="Changes" comment="add application">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/completeWord.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/completeWord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/editWord.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/editWord.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/DictionaryApplication.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/DictionaryApplication.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/DictionaryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/DictionaryApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/addWord.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/addWord.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/addWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/addWord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/completeWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/completeWord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/delWord.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/delWord.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/delWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/delWord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/editWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/editWord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/transWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/transWord.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectId" id="27K1VZaY180ahk5QxTztVQRrIw8" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -31,25 +31,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="275" />
   </component>
-  <component name="RunManager" selected="Application.DictionaryApplication">
-    <configuration name="DictionaryApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.project.UI.DictionaryApplication" />
-      <module name="untitled" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.project.UI.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="delWord" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.project.UI.delWord" />
       <module name="untitled" />
@@ -65,20 +50,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DictionaryApplication" />
         <item itemvalue="Application.delWord" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="2bb3ffc9-46c0-4061-818b-8d974bfa4f25" name="Changes" comment="add application" />
-      <created>1649053988179</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1649053988179</updated>
-    </task>
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
