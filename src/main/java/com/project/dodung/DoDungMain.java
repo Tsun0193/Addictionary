@@ -14,8 +14,5 @@ public class DoDungMain extends Main {
         Word w1 = new Word("cut");
         System.out.println(w.getId());
         System.out.println(w1.getId());
-        DictionaryManagement.stringSimilarWords(w);
-        DictionaryManagement.stringSimilarWords(w1);
     }
-
 }

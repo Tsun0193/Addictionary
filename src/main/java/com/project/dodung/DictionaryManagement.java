@@ -61,6 +61,24 @@ public class DictionaryManagement {
         return res;
     }
 
+    public static String stringSimilarWord(Word w) {
+        String res ="";
+        myTrie.reset();
+        String word = w.getWord();
+        int lastPosOnTrie = myTrie.traverseNonInsert(word);
+        if (lastPosOnTrie == 0 && word.length() > 0) {
+            return res;
+        }
+        ArrayList<Integer> ListId = new ArrayList<>();
+        myTrie.findSimilar(ListId, lastPosOnTrie);
+        System.out.println("Similar word to " + word + ":");
+        for (Integer re : ListId) {
+            String m= DictionaryManagement.selectWordWithId(re);
+            res+=m+"\n";
+        }
+        return res;
+    }
+
     public static void buildTrie() {
         String sql = "SELECT id, word FROM av";
 
@@ -199,4 +217,18 @@ public class DictionaryManagement {
      * Sẽ sửa lại nếu có sort word khi tắt chương trình.
      */
     private static int maxWordId = 108854;
+
+    public static void main(String[] args) {
+        DictionaryManagement.connect();
+        DictionaryManagement.buildTrie();
+        Word w = new Word("min");
+        Word w1 = new Word("cut");
+        System.out.println(w.getId());
+        System.out.println(w1.getId());
+        System.out.println("1");
+        System.out.println(DictionaryManagement.selectWordWithId(123));
+        //DictionaryManagement.stringSimilarWords(w);
+        DictionaryManagement.stringSimilarWords(w1);
+        System.out.println(DictionaryManagement.stringSimilarWord(w));
+    }
 }
