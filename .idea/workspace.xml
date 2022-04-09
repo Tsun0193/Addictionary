@@ -6,10 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="2bb3ffc9-46c0-4061-818b-8d974bfa4f25" name="Changes" comment="mini change">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/DictionaryApplication.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/DictionaryApplication.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/DictionaryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/DictionaryApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/delWord.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/delWord.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/delWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/delWord.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/dodung/DictionaryManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/dodung/DictionaryManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/dodung/DoDungMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/dodung/DoDungMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +37,7 @@
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="228" />
   </component>
-  <component name="RunManager" selected="Application.DictionaryManagement">
+  <component name="RunManager" selected="Application.DictionaryApplication">
     <configuration name="DictionaryApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.project.UI.DictionaryApplication" />
       <module name="untitled" />
@@ -91,8 +92,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DictionaryManagement" />
         <item itemvalue="Application.DictionaryApplication" />
+        <item itemvalue="Application.DictionaryManagement" />
         <item itemvalue="Application.DoDungMain" />
         <item itemvalue="Application.delWord" />
       </list>

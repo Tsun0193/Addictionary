@@ -61,23 +61,22 @@ public class DictionaryManagement {
         return res;
     }
 
-    public static String stringSimilarWord(Word w) {
-        String res ="";
+    public static ArrayList<String> stringSimilarWord(String s) {
+        ArrayList<String> res = new ArrayList<>();
         myTrie.reset();
-        String word = w.getWord();
-        int lastPosOnTrie = myTrie.traverseNonInsert(word);
-        if (lastPosOnTrie == 0 && word.length() > 0) {
+        int lastPosOnTrie = myTrie.traverseNonInsert(s);
+        if (lastPosOnTrie == 0 && s.length()>0) {
             return res;
         }
         ArrayList<Integer> ListId = new ArrayList<>();
         myTrie.findSimilar(ListId, lastPosOnTrie);
-        System.out.println("Similar word to " + word + ":");
         for (Integer re : ListId) {
-            String m= DictionaryManagement.selectWordWithId(re);
-            res+=m+"\n";
+            String temp = DictionaryManagement.selectWordWithId(re);
+            res.add(temp);
         }
         return res;
     }
+
 
     public static void buildTrie() {
         String sql = "SELECT id, word FROM av";
@@ -229,6 +228,6 @@ public class DictionaryManagement {
         System.out.println(DictionaryManagement.selectWordWithId(123));
         //DictionaryManagement.stringSimilarWords(w);
         DictionaryManagement.stringSimilarWords(w1);
-        System.out.println(DictionaryManagement.stringSimilarWord(w));
+        DictionaryManagement.stringSimilarWord("min");
     }
 }

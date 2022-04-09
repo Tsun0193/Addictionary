@@ -1,7 +1,6 @@
 package com.project.UI;
 
 import com.project.dodung.DictionaryManagement;
-import com.project.dodung.Word;
 
 import javax.swing.*;
 import java.awt.event.*;
@@ -17,6 +16,7 @@ public class delWord extends JDialog {
     private JTextField delWordText;
     private JPanel suggestionPanel;
     private JLabel suggestionLabel;
+    private JList suggestionList;
 
     public delWord() {
         setContentPane(contentPane);
@@ -52,39 +52,24 @@ public class delWord extends JDialog {
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
 
-
-
         delWordText.addKeyListener(new KeyAdapter() {
-
             @Override
-            public void keyTyped(KeyEvent e) {
-                super.keyTyped(e);
-                Word w = new Word(delWordText.getText());
-
-                System.out.println(w.getWord());
-                System.out.println(DictionaryManagement.stringSimilarWord(w));
-                System.out.println("*");
-                suggestionLabel.setText("Suggestion: \n" + DictionaryManagement.stringSimilarWord(w));
+            public void keyReleased(KeyEvent e) {
+                super.keyReleased(e);
+                DefaultListModel<String>listModel=new DefaultListModel<>();
+                String s= delWordText.getText();
+                listModel.addAll(DictionaryManagement.stringSimilarWord(s));
+                suggestionList.setModel(listModel);
+            }
+        });
+        suggestionList.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                delWordText.setText(suggestionList.getSelectedValue().toString());
             }
         });
 
-
-
-        /*
-        delWordText.addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyPressed(KeyEvent e) {
-                super.keyPressed(e);
-                Word w = new Word(delWordText.getText());
-
-                System.out.println(w.getWord());
-                System.out.println(DictionaryManagement.stringSimilarWord(w));
-                System.out.println("*");
-                suggestionLabel.setText("Suggestion: \n" + DictionaryManagement.stringSimilarWord(w));
-            }
-        });
-
-         */
     }
 
     private void onOK() {

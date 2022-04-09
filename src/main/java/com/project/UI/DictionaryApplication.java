@@ -1,8 +1,9 @@
 package com.project.UI;
 
+import com.project.dodung.DictionaryManagement;
+
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
 /**
  * cửa sổ chính có 4 mục: transWord,transSentence,addWord và delWord.
@@ -41,6 +42,7 @@ public class DictionaryApplication extends JFrame {
     private JTextField transWordText;
     private JTextField transSentenceText;
     private JButton editWordButton;
+    private JList suggestionTransWordList;
     /**
      * Input from Different Area.
      */
@@ -61,6 +63,9 @@ public class DictionaryApplication extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(appPanel);
         this.pack();
+
+        DictionaryManagement.connect();
+        DictionaryManagement.buildTrie();
 
         addWordButton.addActionListener(new ActionListener() {
             @Override
@@ -106,6 +111,24 @@ public class DictionaryApplication extends JFrame {
                 editWord dialog = new editWord();
                 dialog.pack();
                 dialog.setVisible(true);
+            }
+        });
+        transWordText.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                super.keyReleased(e);
+                DefaultListModel<String>listModel=new DefaultListModel<>();
+                String s= transWordText.getText();
+                listModel.addAll(DictionaryManagement.stringSimilarWord(s));
+                suggestionTransWordList.setModel(listModel);
+            }
+        });
+
+        suggestionTransWordList.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                transWordText.setText(suggestionTransWordList.getSelectedValue().toString());
             }
         });
     }
