@@ -6,10 +6,10 @@ import java.awt.event.*;
 public class transWord extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
-    private JButton buttonCancel;
+    private JButton buttonEdit;
     private JLabel transWordLabel;
-    private JLabel Input;
-    private JTextField textField1;
+    private JLabel inputWordLabel;
+    private JLabel definitionLabel;
     private JTextField transWordTranslation;
 
     public transWord() {
@@ -23,28 +23,28 @@ public class transWord extends JDialog {
             }
         });
 
-        buttonCancel.addActionListener(new ActionListener() {
+        buttonEdit.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                onCancel();
+                onEdit();
             }
         });
 
-        // call onCancel() when cross is clicked
+        // call onEdit() when cross is clicked
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
-                onCancel();
+                onEdit();
             }
         });
 
-        // call onCancel() on ESCAPE
+        // call onEdit() on ESCAPE
         contentPane.registerKeyboardAction(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                onCancel();
+                onEdit();
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
-        Input.setText(DictionaryApplication.getTransStr());
+        inputWordLabel.setText(DictionaryApplication.getTransStr());
 
     }
 
@@ -53,8 +53,12 @@ public class transWord extends JDialog {
         dispose();
     }
 
-    private void onCancel() {
+    private void onEdit() {
         // add your code here if necessary
+        DictionaryApplication.editStr=inputWordLabel.getText();
+        completeWord dialog = new completeWord();
+        dialog.pack();
+        dialog.setVisible(true);
         dispose();
     }
 
