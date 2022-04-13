@@ -3,6 +3,8 @@ package com.project.UI;
 import javax.swing.*;
 import java.awt.event.*;
 
+import static com.project.UI.DictionaryApplication.transStr;
+
 public class transWord extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
@@ -10,12 +12,17 @@ public class transWord extends JDialog {
     private JLabel transWordLabel;
     private JLabel inputWordLabel;
     private JLabel definitionLabel;
-    private JTextField transWordTranslation;
+    private JTextArea transWordDefText;
 
     public transWord() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
+
+        String label = transStr;
+        transWordLabel.setText("Translation: " + label);
+
+        inputWordLabel.setText("/"+"NULL"+"/");
 
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -29,22 +36,6 @@ public class transWord extends JDialog {
             }
         });
 
-        // call onEdit() when cross is clicked
-        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-        addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent e) {
-                onEdit();
-            }
-        });
-
-        // call onEdit() on ESCAPE
-        contentPane.registerKeyboardAction(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                onEdit();
-            }
-        }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-
-        inputWordLabel.setText(DictionaryApplication.getTransStr());
 
     }
 

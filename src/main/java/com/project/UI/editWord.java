@@ -1,5 +1,7 @@
 package com.project.UI;
 
+import com.project.dodung.DictionaryManagement;
+
 import javax.swing.*;
 import java.awt.event.*;
 
@@ -11,6 +13,7 @@ public class editWord extends JDialog {
     private JLabel editWordLabel;
     private JTextField editWordText;
     private JLabel editTextLabel;
+    private JList suggestionEditList;
 
     //public String editStr;
 
@@ -23,6 +26,25 @@ public class editWord extends JDialog {
         buttonOK.addActionListener(e -> onOK());
 
         buttonCancel.addActionListener(e -> onCancel());
+
+        editWordText.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                super.keyReleased(e);editWordText.getText();
+                DefaultListModel<String>listModel = new DefaultListModel<>();
+                String s = editWordText.getText();
+                listModel.addAll(DictionaryManagement.stringSimilarWord(s));
+                suggestionEditList.setModel(listModel);
+            }
+        });
+
+        suggestionEditList.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                editWordText.setText(suggestionEditList.getSelectedValue().toString());
+            }
+        });
 
         // call onCancel() when cross is clicked
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
