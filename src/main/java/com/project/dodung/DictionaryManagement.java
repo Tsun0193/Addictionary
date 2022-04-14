@@ -160,7 +160,7 @@ public class DictionaryManagement {
         try (PreparedStatement preStatement = conn.prepareStatement(sql)) {
             preStatement.setInt(1, id);
             try (ResultSet rs = preStatement.executeQuery()) {
-                return rs.getString("word");
+                return rs.getString("html");
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
