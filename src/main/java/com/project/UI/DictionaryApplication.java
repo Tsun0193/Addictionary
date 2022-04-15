@@ -1,9 +1,10 @@
 package com.project.UI;
 
-import com.project.dodung.DictionaryManagement;
+import com.project.dodung.*;
 
 import javax.swing.*;
 import java.awt.event.*;
+import java.util.Objects;
 
 /**
  * cửa sổ chính có 4 mục: transWord,transSentence,addWord và delWord.
@@ -55,7 +56,7 @@ public class DictionaryApplication extends JFrame {
     public static String sentence;
 
     /**
-     * khởi chạy (cũng không hiểu mớ này lắm)
+     * khởi chạy (cũng không hiểu mớ này lắm).
      * @param title String
      */
     public DictionaryApplication(String title){
@@ -67,51 +68,42 @@ public class DictionaryApplication extends JFrame {
         DictionaryManagement.connect();
         DictionaryManagement.buildTrie();
 
-        addWordButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                addWord dialog = new addWord();
-                dialog.pack();
-                dialog.setVisible(true);
-            }
+        addWordButton.addActionListener(e -> {
+            addWord dialog = new addWord();
+            dialog.pack();
+            dialog.setVisible(true);
         });
 
-        delWordButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                delWord dialog = new delWord();
-                dialog.pack();
-                dialog.setVisible(true);
-            }
+        delWordButton.addActionListener(e -> {
+            delWord dialog = new delWord();
+            dialog.pack();
+            dialog.setVisible(true);
         });
 
-        transWordButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                transStr = transWordText.getText();
+        transWordButton.addActionListener(e -> {
+            transStr = transWordText.getText();
+            Word w = new Word(transStr);
+            if (w.getId() == 0 || Objects.equals(w.getWord(), "")){
+                JOptionPane.showMessageDialog(appPanel,"This word is non-existed in dictionary");
+            }else {
                 transWord dialog = new transWord();
                 dialog.pack();
                 dialog.setVisible(true);
             }
+
         });
 
 
-        transSentenceButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                sentence = transSentenceText.getText();
-                transSentence dialog = new transSentence();
-                dialog.pack();
-                dialog.setVisible(true);
-            }
+        transSentenceButton.addActionListener(e -> {
+            sentence = transSentenceText.getText();
+            transSentence dialog = new transSentence();
+            dialog.pack();
+            dialog.setVisible(true);
         });
-        editWordButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                editWord dialog = new editWord();
-                dialog.pack();
-                dialog.setVisible(true);
-            }
+        editWordButton.addActionListener(e -> {
+            editWord dialog = new editWord();
+            dialog.pack();
+            dialog.setVisible(true);
         });
         transWordText.addKeyListener(new KeyAdapter() {
             @Override

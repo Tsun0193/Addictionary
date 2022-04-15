@@ -229,5 +229,6 @@ public class DictionaryManagement {
         //DictionaryManagement.stringSimilarWords(w);
         DictionaryManagement.stringSimilarWords(w1);
         DictionaryManagement.stringSimilarWord("min");
+        System.out.println(DictionaryManagement.selectWordHtmlWithId(123));
     }
 }
