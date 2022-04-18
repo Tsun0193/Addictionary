@@ -63,20 +63,6 @@ public class transWord extends JDialog {
         transWordLabel.setText("Translation: " + label);
         Word word = new Word(label);
         String s = DictionaryManagement.selectWordHtmlWithId(DictionaryManagement.getWordId(word));
-        String pronounciation = "";
-        int count = 0;
-        for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == '/') {
-                count++;
-            }
-            if (count == 2) {
-                pronounciation += s.charAt(i);
-            } else if (count == 3) {
-                pronounciation += s.charAt(i);
-                break;
-            }
-        }
-        pronounLabel.setText(pronounciation);
 
         System.out.println(s);
         definitionTextPane.setText(DictionaryManagement.selectWordHtmlWithId(DictionaryManagement.getWordId(word)));

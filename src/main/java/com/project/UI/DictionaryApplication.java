@@ -44,6 +44,7 @@ public class DictionaryApplication extends JFrame {
     private JTextField transSentenceText;
     private JButton editWordButton;
     private JList suggestionTransWordList;
+    private JTextField warningTextField;
     /**
      * Input from Different Area.
      */
