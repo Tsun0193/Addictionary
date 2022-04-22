@@ -87,6 +87,7 @@ public class DictionaryManagement {
             // loop through the result set
             while (rs.next()) {
                 myTrie.addWord(Word.normalizeWord(rs.getString("word")), rs.getInt("id"));
+                maxWordId += 1;
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -215,11 +216,10 @@ public class DictionaryManagement {
     /**
      * Sẽ sửa lại nếu có sort word khi tắt chương trình.
      */
-    private static int maxWordId = 108854;
+    private static int maxWordId = 0;
 
     public static void main(String[] args) {
-        DictionaryManagement.connect();
-        DictionaryManagement.buildTrie();
+
         Word w = new Word("min");
         Word w1 = new Word("cut");
         System.out.println(w.getId());
