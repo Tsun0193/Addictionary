@@ -1,5 +1,6 @@
 package com.project.dodung;
 
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public class Trie {
@@ -10,13 +11,20 @@ public class Trie {
     }
 
     public int getValidIntChar(char x) {
-        if( ((int)x < (int)'a' || (int)x > (int)'z') && ((int)x != 45 ) && ((int)x != 32 )) return -1;
+        if( ((int)x < (int)'a' || (int)x > (int)'z') && ((int)x != 45 ) && ((int)x != 32 ) && ((int)x != 39 )
+                && ((int)x != 46)) return -1;
         int nextChar = (x - 'a');
         if((int)x == 45) {
             nextChar = 26;
         }
         if((int)x == 32) {
             nextChar = 27;
+        }
+        if((int)x == 39) {
+            nextChar = 28;
+        }
+        if((int)x == 46) {
+            nextChar = 29;
         }
         return nextChar;
     }
@@ -34,6 +42,7 @@ public class Trie {
                 trie[pos].setNext(nextChar, this.curMax);
             }
             pos = trie[pos].getNext()[nextChar];
+
         }
         return pos;
     }
@@ -49,6 +58,7 @@ public class Trie {
             }
             pos = trie[pos].getNext()[nextChar];
         }
+
         return pos;
     }
 
@@ -58,11 +68,16 @@ public class Trie {
         if(trie[pos].getId() == 0) {
             trie[pos].setId(wordId);
         }
+
     }
 
     /** Tìm Word Id. */
     public int findWordId(String word) {
         int pos = traverseNonInsert(word);
+        if(pos == 0) return 0;
+        if(word.charAt(0) == 'a') {
+            System.out.println(trie[pos].getId());
+        }
         return trie[pos].getId();
     }
 
@@ -96,7 +111,7 @@ public class Trie {
         if (resList.size() == 7) {
             return;
         }
-        for(int i = 0;i <= 27;++i) {
+        for(int i = 0;i <= 28;++i) {
             if(trie[curFindNode].getNext()[i] != 0) {
                 findSimilar(resList, trie[curFindNode].getNext()[i]);
             }
@@ -126,7 +141,7 @@ public class Trie {
     class node {
 
         public node() {
-            next = new int[28];
+            next = new int[30];
         }
         public int getId() {
             return id;

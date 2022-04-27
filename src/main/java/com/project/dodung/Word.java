@@ -41,7 +41,7 @@ public class Word {
         for(int i = 0; i < word.length(); ++i) {
             int cur = (int)word.charAt(i);
             if( (cur >= (int)'a' && cur <= (int)'z') || (cur >= (int)'A' && cur <= (int)'Z')
-                    || (cur == 45) || (cur == 32)) {
+                    || (cur == 45) || (cur == 32) || (cur == 39)  || (cur == 46)){
                 ret.append(word.charAt(i));
             }
         }

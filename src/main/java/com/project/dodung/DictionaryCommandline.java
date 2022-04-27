@@ -1,31 +1,20 @@
 package com.project.dodung;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
+import java.io.IOException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 
-import com.google.cloud.texttospeech.v1.AudioConfig;
-import com.google.cloud.texttospeech.v1.AudioEncoding;
-import com.google.cloud.texttospeech.v1.SsmlVoiceGender;
-import com.google.cloud.texttospeech.v1.SynthesisInput;
-import com.google.cloud.texttospeech.v1.SynthesizeSpeechResponse;
-import com.google.cloud.texttospeech.v1.TextToSpeechClient;
-import com.google.cloud.texttospeech.v1.VoiceSelectionParams;
-import com.google.cloud.translate.*;
+import com.darkprograms.speech.translator.GoogleTranslate;
 
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
+import com.darkprograms.speech.synthesiser.SynthesiserV2;
+import javazoom.jl.decoder.JavaLayerException;
+import javazoom.jl.player.advanced.AdvancedPlayer;
+import opennlp.tools.formats.muc.SgmlParser;
 
 /** Nếu thao tác với Dictionary thì thao tác thông qua DictionaryCommandline. */
 public class DictionaryCommandline {
 
-    public DictionaryCommandline() {
-        DictionaryManagement.connect();
-        DictionaryManagement.buildTrie();
-    }
     /** Find similar word to provided word
      * @param word the word to find similar
      * @return an array of pair that contains word's id and word's name
@@ -54,9 +43,11 @@ public class DictionaryCommandline {
     // Cần check xem từ có tồn tại hay không
     /** Insert new word to database
      * @param word word to be inserted
-     * @param html word's content(html)
+     * @param pronounce word's pronunciation
+     * @param description word's description
      */
-    public static boolean insertWord(String word,String html) {
+    public static boolean insertWord(String word,String pronounce, String description) {
+        String html = toHtml(word,pronounce,description);
         Word w = new Word(word,html,DictionaryManagement.getMaxWordId()+1);
         try{
             DictionaryManagement.insertWordToTable(w);
@@ -81,7 +72,7 @@ public class DictionaryCommandline {
         return true;
     }
 
-    public boolean checkConnection() {
+    public static boolean checkConnection() {
         try {
             URL url = new URL("https://www.google.com");
             URLConnection connection = url.openConnection();
@@ -92,45 +83,53 @@ public class DictionaryCommandline {
         }
     }
 
-    public static String sentenceTranslator(String sentence) {
-        if(sentence.isEmpty()) {
-            return "";
+
+    public static String sentenceTranslator(String sentence){
+        if(checkConnection()){
+            if(sentence.isEmpty()) {
+                return "";
+            }
+            String ret = "";
+            try{
+                ret = GoogleTranslate.translate("vi",sentence);
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+            return ret;
         }
-        Translate translator = TranslateOptions.getDefaultInstance().getService();
-        Translation translation = translator.translate(
-                sentence,
-                Translate.TranslateOption.sourceLanguage(
-                        translator.detect(sentence).getLanguage()),
-                Translate.TranslateOption.targetLanguage("vi")
-        );
-        return translation.getTranslatedText();
+        return "";
     }
 
-    public void speak(String sentence, String languageCode) throws Exception {
-        try (TextToSpeechClient client = TextToSpeechClient.create()) {
-            SynthesisInput input = SynthesisInput.newBuilder().setText(sentence).build();
+    public static void speak(String sentence) {
+        Thread thread = new Thread(() -> {
+            try {
 
-            VoiceSelectionParams voice = VoiceSelectionParams
-                    .newBuilder()
-                    .setLanguageCode(languageCode)
-                    .setSsmlGender(SsmlVoiceGender.NEUTRAL)
-                    .build();
+                //Create a JLayer instance
+                AdvancedPlayer player = new AdvancedPlayer(synthesizer.getMP3Data(sentence));
+                player.play();
 
-            AudioConfig audioConfig = AudioConfig
-                    .newBuilder()
-                    .setAudioEncoding(AudioEncoding.LINEAR16)
-                    .build();
+            } catch (IOException | JavaLayerException e) {
 
-            SynthesizeSpeechResponse response = client
-                    .synthesizeSpeech(input, voice, audioConfig);
+                e.printStackTrace();
 
-            InputStream stream = new ByteArrayInputStream(response.getAudioContent().toByteArray());
-            AudioInputStream sound = AudioSystem.getAudioInputStream(stream);
+            }
+        });
+        thread.setDaemon(false);
 
-            Clip clip = AudioSystem.getClip();
-            clip.open(sound);
-            clip.start();
-        }
+        thread.start();
+
     }
 
+    public static void close() {
+        DictionaryManagement.sortDatabase();
+    }
+
+    public static String toHtml(String word, String pronounce,String description){
+        String wordHtml = "<h1>" + word + "</h1>";
+        String pronounceHtml = "<h3><i>" + pronounce + "</i></h3>";
+        String desHtml = description;
+        return wordHtml + pronounceHtml + desHtml;
+    }
+    static SynthesiserV2 synthesizer = new SynthesiserV2("AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw");
 }

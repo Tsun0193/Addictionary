@@ -187,9 +187,11 @@ public class DictionaryManagement {
     }
 
     public static void insertWordToTable(Word w) throws existException {
-        if (getWordId(w) <= 0) {
+
+        if (getWordId(w) > 0) {
             throw new existException(w.getWord() + " already exists");
         }
+
         String sql = "INSERT INTO av(id,word,html) VALUES(?,?,?)";
         ++maxWordId;
         myTrie.addWord(w.getWord(), w.getId());
@@ -198,6 +200,39 @@ public class DictionaryManagement {
             preStatement.setString(2, w.getWord());
             preStatement.setString(3, w.getHtml());
             preStatement.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static void sortDatabase() {
+        String s1 = "CREATE TABLE av_ordered (id INTEGER PRIMARY KEY, word TEXT, html TEXT, description TEXT, pronounce TEXT)";
+        String s2 = "INSERT INTO av_ordered (word, html, description, pronounce) SELECT word, html, description, pronounce FROM av ORDER BY word";
+        String s3 = "DROP TABLE av";
+        String s4 = "ALTER TABLE av_ordered RENAME TO av";
+        String s5 = "VACUUM";
+        try (PreparedStatement preStatement1 = conn.prepareStatement(s1)) {
+            preStatement1.execute();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        try (PreparedStatement preStatement2 = conn.prepareStatement(s2)) {
+            preStatement2.execute();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        try (PreparedStatement preStatement3 = conn.prepareStatement(s3)) {
+            preStatement3.execute();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        try (PreparedStatement preStatement4 = conn.prepareStatement(s4)) {
+            preStatement4.execute();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        try (PreparedStatement preStatement5 = conn.prepareStatement(s5)) {
+            preStatement5.execute();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -219,16 +254,5 @@ public class DictionaryManagement {
     private static int maxWordId = 0;
 
     public static void main(String[] args) {
-
-        Word w = new Word("min");
-        Word w1 = new Word("cut");
-        System.out.println(w.getId());
-        System.out.println(w1.getId());
-        System.out.println("1");
-        System.out.println(DictionaryManagement.selectWordWithId(123));
-        //DictionaryManagement.stringSimilarWords(w);
-        DictionaryManagement.stringSimilarWords(w1);
-        DictionaryManagement.stringSimilarWord("min");
-        System.out.println(DictionaryManagement.selectWordHtmlWithId(123));
     }
 }
