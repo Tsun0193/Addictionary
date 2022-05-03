@@ -1,5 +1,7 @@
 package com.project.UI;
 
+import com.project.dodung.DictionaryCommandline;
+
 import javax.swing.*;
 import java.awt.event.*;
 
@@ -7,14 +9,21 @@ public class transSentence extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
-    private JLabel transSentenceLabel;
-    private JLabel Input;
-    private JTextField transSentenceTranslation;
+    private JLabel labelTitle;
+    private JPanel panelTarget;
+    private JPanel panelTrans;
+    private JLabel labelTarget;
+    private JLabel labelTrans;
+    private JTextArea textAreaTargetSentence;
+    private JTextArea textAreaTransSentence;
+    private JButton buttonSpeech;
 
     public transSentence() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
+        textAreaTargetSentence.setText(DictionaryApplication.sentence);
+        textAreaTransSentence.setText(DictionaryCommandline.sentenceTranslator(DictionaryApplication.sentence));
 
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -42,8 +51,12 @@ public class transSentence extends JDialog {
                 onCancel();
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-
-        Input.setText(DictionaryApplication.getSentence());
+        buttonSpeech.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DictionaryCommandline.speak(textAreaTargetSentence.getText());
+            }
+        });
     }
 
     private void onOK() {

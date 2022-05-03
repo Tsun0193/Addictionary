@@ -247,7 +247,7 @@ public class DictionaryManagement {
     }
 
     public static Connection conn = null;
-    private static final Trie myTrie = new Trie();
+    public static final Trie myTrie = new Trie();
     /**
      * Sẽ sửa lại nếu có sort word khi tắt chương trình.
      */

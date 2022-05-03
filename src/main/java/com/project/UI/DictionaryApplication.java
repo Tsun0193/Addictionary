@@ -41,11 +41,11 @@ public class DictionaryApplication extends JFrame {
 
 
     private JTextField transWordText;
-    private JTextField transSentenceText;
     private JButton editWordButton;
     private JList suggestionTransWordList;
     private JTextField warningTextField;
     private JPanel editWordPanel;
+    private JEditorPane transSentenceEditorPane;
     /**
      * Input from Different Area.
      */
@@ -54,6 +54,8 @@ public class DictionaryApplication extends JFrame {
     public static String addDef;
     public static String delStr;
     public static String editStr;
+    public static String editPronounce = "";
+    public static String editDefinition = "";
     public static String transStr;
     public static String sentence;
 
@@ -97,7 +99,7 @@ public class DictionaryApplication extends JFrame {
 
 
         transSentenceButton.addActionListener(e -> {
-            sentence = transSentenceText.getText();
+            sentence = transSentenceEditorPane.getText();
             transSentence dialog = new transSentence();
             dialog.pack();
             dialog.setVisible(true);

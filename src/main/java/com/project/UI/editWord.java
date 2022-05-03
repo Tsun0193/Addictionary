@@ -10,10 +10,12 @@ public class editWord extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
-    private JLabel editWordLabel;
-    private JTextField editWordText;
-    private JLabel editTextLabel;
-    private JList suggestionEditList;
+    private JLabel labelEdit;
+    private JTextField textFieldTargetWord;
+    private JLabel labelTarget;
+    private JList listSuggestion;
+    private JPanel panelSuggestion;
+    private JPanel panelTarget;
 
     //public String editStr;
 
@@ -27,22 +29,23 @@ public class editWord extends JDialog {
 
         buttonCancel.addActionListener(e -> onCancel());
 
-        editWordText.addKeyListener(new KeyAdapter() {
+        textFieldTargetWord.addKeyListener(new KeyAdapter() {
             @Override
             public void keyReleased(KeyEvent e) {
-                super.keyReleased(e);editWordText.getText();
+                super.keyReleased(e);
+                textFieldTargetWord.getText();
                 DefaultListModel<String>listModel = new DefaultListModel<>();
-                String s = editWordText.getText();
+                String s = textFieldTargetWord.getText();
                 listModel.addAll(DictionaryManagement.stringSimilarWord(s));
-                suggestionEditList.setModel(listModel);
+                listSuggestion.setModel(listModel);
             }
         });
 
-        suggestionEditList.addMouseListener(new MouseAdapter() {
+        listSuggestion.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-                editWordText.setText(suggestionEditList.getSelectedValue().toString());
+                textFieldTargetWord.setText(listSuggestion.getSelectedValue().toString());
             }
         });
 
@@ -59,7 +62,7 @@ public class editWord extends JDialog {
     }
 
     private void onOK() {
-        DictionaryApplication.editStr=editWordText.getText();
+        DictionaryApplication.editStr = textFieldTargetWord.getText();
         completeWord dialog = new completeWord();
         dialog.pack();
         dialog.setVisible(true);

@@ -1,28 +1,27 @@
 package com.project.UI;
-import com.project.dodung.DictionaryManagement;
 import com.project.dodung.*;
 import javax.swing.*;
 import java.awt.event.*;
-import com.project.UI.DictionaryApplication;
 
 public class addWord extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
-    private JTextField addPronounTextfield;
-    private JTextField addWordText;
-    private JTextField addDefTextField;
-    private JPanel addWordPanel;
-    private JLabel addWordLabel;
-    private JPanel newPronounPanel;
-    private JLabel newPronounLabel;
-    private JPanel newDefPanel;
-    private JLabel newDefLabel;
+    private JTextField textFieldAddPronounce;
+    private JTextField textFieldAddWord;
+    private JPanel panelWord;
+    private JLabel labelWord;
+    private JPanel panelPronounce;
+    private JLabel labelPronounce;
+    private JPanel panelNewDefinition;
+    private JLabel labelDefinition;
+    private JTextField textFieldAddDefinition;
+    private JPanel panelWordPronounce;
 
     public addWord() {
         setContentPane(contentPane);
         setModal(true);
-        getRootPane().setDefaultButton(buttonOK);
+        //getRootPane().setDefaultButton(buttonOK);
 
         buttonOK.addActionListener(e -> onOK());
 
@@ -39,19 +38,13 @@ public class addWord extends JDialog {
         // call onCancel() on ESCAPE
         contentPane.registerKeyboardAction(e -> onCancel(), KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
-
     }
 
     private void onOK() {
-        Word w = new Word(addWordText.getText());
-        try{
-            System.out.println(w.getWord());
-            DictionaryManagement.insertWordToTable(w);
+        if(!DictionaryCommandline.insertWord(textFieldAddWord.getText(), textFieldAddPronounce.getText()
+                , textFieldAddDefinition.getText())) {
+            JOptionPane.showMessageDialog(contentPane, "Word\"" + textFieldAddWord.getText() + "\"" + "is existed!");
         }
-        catch (existException e){
-            JOptionPane.showMessageDialog(contentPane,e.getMessage());
-        }
-        //DictionaryManagement.insertWordToTable();
         dispose();
     }
 
@@ -59,6 +52,7 @@ public class addWord extends JDialog {
         // add your code here if necessary
         dispose();
     }
+
 
     public static void main(String[] args) {
         addWord dialog = new addWord();

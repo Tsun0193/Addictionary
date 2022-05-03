@@ -10,7 +10,7 @@ import com.darkprograms.speech.translator.GoogleTranslate;
 import com.darkprograms.speech.synthesiser.SynthesiserV2;
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.advanced.AdvancedPlayer;
-import opennlp.tools.formats.muc.SgmlParser;
+
 
 /** Nếu thao tác với Dictionary thì thao tác thông qua DictionaryCommandline. */
 public class DictionaryCommandline {

@@ -1,24 +1,26 @@
 package com.project.UI;
 
+import com.project.dodung.*;
+
+
 import javax.swing.*;
 import java.awt.event.*;
-import com.project.UI.editWord;
-import com.project.UI.DictionaryApplication;
 
 public class completeWord extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
-    private JLabel completeLabel;
-    private JLabel targetEditWord;
-    private JLabel pronounceEditWord;
-    private JTextField editProText;
-    private JLabel defEditWord;
-    private JTextField editDefText;
-    private JLabel targetEditText;
-
-    public static String inputEditPro;
-    public static String inputEditDef;
+    private JLabel labelEdit;
+    private JPanel panelEdit;
+    private JPanel panelEditPronounce;
+    private JLabel labelTargetWord;
+    private JPanel panelEditDefinition;
+    private JLabel labelPronounce;
+    private JLabel labelEditDefinition;
+    private JEditorPane editorPaneEditPronounce;
+    private JEditorPane editorPaneEditDefinition;
+    private JLabel labelTarget;
+    private JLabel labelWord;
 
     public completeWord() {
 
@@ -26,7 +28,7 @@ public class completeWord extends JDialog {
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
 
-        targetEditWord.setText("Word: "+DictionaryApplication.editStr);
+        labelWord.setText(DictionaryApplication.editStr);
 
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

@@ -1,7 +1,6 @@
 package com.project.UI;
 
-import com.project.dodung.DictionaryManagement;
-import com.project.dodung.Word;
+import com.project.dodung.*;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -12,21 +11,21 @@ public class transWord extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonEdit;
-    private JLabel transWordLabel;
-    private JLabel pronounLabel;
     private JPanel buttonPanel;
     private JPanel definitionPanel;
-    private JLabel definitionLabel;
-    private JTextPane definitionTextPane;
-    private JScrollBar definitionScrollBar;
-    private JLabel inputWordLabel;
+    private JTextPane textPaneDefinition;
+    private JLabel labelTitle;
+    private JButton buttonSpeech;
+    private JLabel labelTarget;
+    private JLabel labelWord;
+    private JPanel panelTarget;
 
 
     public transWord() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
-
+        labelWord.setText(DictionaryApplication.transStr);
         setDefinitionText();
 
         buttonOK.addActionListener(new ActionListener() {
@@ -41,6 +40,12 @@ public class transWord extends JDialog {
             }
         });
 
+        buttonSpeech.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DictionaryCommandline.speak(labelWord.getText());
+            }
+        });
     }
 
     private void onOK() {
@@ -50,23 +55,23 @@ public class transWord extends JDialog {
 
     private void onEdit() {
         // add your code here if necessary
-        DictionaryApplication.editStr = inputWordLabel.getText();
+        DictionaryApplication.editStr = DictionaryApplication.transStr;
+        DictionaryApplication.editDefinition = textPaneDefinition.getText();
+        System.out.println(DictionaryApplication.editDefinition);
         completeWord dialog = new completeWord();
         dialog.pack();
         dialog.setVisible(true);
         dispose();
     }
 
-    private void setDefinitionText() {
-        definitionTextPane.setContentType("text/html");
-        String label = DictionaryApplication.transStr;
-        transWordLabel.setText("Translation: " + label);
-        Word word = new Word(label);
-        String s = DictionaryManagement.selectWordHtmlWithId(DictionaryManagement.getWordId(word));
 
-        System.out.println(s);
-        definitionTextPane.setText(DictionaryManagement.selectWordHtmlWithId(DictionaryManagement.getWordId(word)));
+    private void setDefinitionText() {
+        textPaneDefinition.setContentType("text/html");
+        Word word = new Word(labelWord.getText());
+        String s = DictionaryManagement.selectWordHtmlWithId(DictionaryManagement.getWordId(word));
+        textPaneDefinition.setText(DictionaryManagement.selectWordHtmlWithId(DictionaryManagement.getWordId(word)));
     }
+
 
     public static void main(String[] args) {
         transWord dialog = new transWord();

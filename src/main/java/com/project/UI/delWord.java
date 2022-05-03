@@ -1,6 +1,6 @@
 package com.project.UI;
 
-import com.project.dodung.DictionaryManagement;
+import com.project.dodung.*;
 
 import javax.swing.*;
 import java.awt.event.*;
@@ -9,14 +9,13 @@ public class delWord extends JDialog {
     private JPanel contentPane;
     private JButton buttonApply;
     private JButton buttonCancel;
-    private JPanel YN;
-    private JLabel delWordLabel;
-    private JPanel contextPanel;
+    private JLabel labelDeleteWord;
+    private JPanel panelContext;
     private JLabel input;
     private JTextField delWordText;
-    private JPanel suggestionPanel;
-    private JLabel suggestionLabel;
-    private JList suggestionList;
+    private JPanel panelSuggestion;
+    private JLabel labelSuggestion;
+    private JList listSuggestion;
 
     public delWord() {
         setContentPane(contentPane);
@@ -59,21 +58,24 @@ public class delWord extends JDialog {
                 DefaultListModel<String>listModel=new DefaultListModel<>();
                 String s= delWordText.getText();
                 listModel.addAll(DictionaryManagement.stringSimilarWord(s));
-                suggestionList.setModel(listModel);
+                listSuggestion.setModel(listModel);
             }
         });
-        suggestionList.addMouseListener(new MouseAdapter() {
+        listSuggestion.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-                delWordText.setText(suggestionList.getSelectedValue().toString());
+                delWordText.setText(listSuggestion.getSelectedValue().toString());
             }
         });
 
     }
 
     private void onOK() {
-        // add your code here
+        JOptionPane.showConfirmDialog(contentPane,"Are you sure about deleting this word?");
+        if(!DictionaryCommandline.deleteWord(DictionaryManagement.myTrie.findWordId(delWordText.getText()))){
+            JOptionPane.showMessageDialog(contentPane,"Word\"" + delWordText.getText() + "\"" + "is existed!");
+        }
         dispose();
     }
 
