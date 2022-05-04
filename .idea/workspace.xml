@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bb3ffc9-46c0-4061-818b-8d974bfa4f25" name="Changes" comment="build UI">
+    <list default="true" id="2bb3ffc9-46c0-4061-818b-8d974bfa4f25" name="Changes" comment="build UI edit word">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dict_hh.db" beforeDir="false" afterPath="$PROJECT_DIR$/dict_hh.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/DictionaryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/DictionaryApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/addWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/addWord.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/completeWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/completeWord.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/delWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/delWord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/editWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/editWord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/transWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/transWord.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651603006897</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="build UI edit word">
+      <created>1651630610536</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1651630610536</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -169,6 +180,7 @@
     <MESSAGE value="add suggest UI :v" />
     <MESSAGE value="." />
     <MESSAGE value="build UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="build UI" />
+    <MESSAGE value="build UI edit word" />
+    <option name="LAST_COMMIT_MESSAGE" value="build UI edit word" />
   </component>
 </project>

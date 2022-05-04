@@ -33,7 +33,6 @@ public class editWord extends JDialog {
             @Override
             public void keyReleased(KeyEvent e) {
                 super.keyReleased(e);
-                textFieldTargetWord.getText();
                 DefaultListModel<String>listModel = new DefaultListModel<>();
                 String s = textFieldTargetWord.getText();
                 listModel.addAll(DictionaryManagement.stringSimilarWord(s));

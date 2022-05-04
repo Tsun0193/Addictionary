@@ -41,11 +41,19 @@ public class addWord extends JDialog {
     }
 
     private void onOK() {
-        if(!DictionaryCommandline.insertWord(textFieldAddWord.getText(), textFieldAddPronounce.getText()
-                , textFieldAddDefinition.getText())) {
-            JOptionPane.showMessageDialog(contentPane, "Word\"" + textFieldAddWord.getText() + "\"" + "is existed!");
+        int confirm = JOptionPane.showConfirmDialog(contentPane,"This action will make the database change!\n" +
+                "Are you sure about adding this word to dictionary?","Confirm",JOptionPane.YES_NO_OPTION);
+        if(confirm == JOptionPane.YES_OPTION) {
+            if (!DictionaryCommandline.insertWord(textFieldAddWord.getText(), textFieldAddPronounce.getText()
+                    , textFieldAddDefinition.getText())) {
+                JOptionPane.showMessageDialog(contentPane,
+                        "Word\"" + textFieldAddWord.getText() + "\"" + "is existed!");
+            } else {
+                JOptionPane.showMessageDialog(contentPane,
+                        "Word\"" + textFieldAddWord.getText() + "\"" + "was added successfully!");
+            }
+            dispose();
         }
-        dispose();
     }
 
     private void onCancel() {

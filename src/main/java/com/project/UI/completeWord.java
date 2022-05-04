@@ -59,10 +59,16 @@ public class completeWord extends JDialog {
     }
 
     private void onOK() {
-        DictionaryCommandline.deleteWord(DictionaryManagement.myTrie.findWordId(labelWord.getText()));
-        DictionaryCommandline.insertWord(labelWord.getText(),
-                editorPaneEditPronounce.getText(),editorPaneEditDefinition.getText());
-        dispose();
+        int confirm = JOptionPane.showConfirmDialog(contentPane,"This action will make the database change!\n" +
+                "Are you sure about editing this word in dictionary?","Confirm",JOptionPane.YES_NO_OPTION);
+        if(confirm == JOptionPane.YES_OPTION) {
+            if(DictionaryCommandline.deleteWord(DictionaryManagement.myTrie.findWordId(labelWord.getText()))
+                    && DictionaryCommandline.insertWord(labelWord.getText(),
+                    editorPaneEditPronounce.getText(), editorPaneEditDefinition.getText())){
+                JOptionPane.showMessageDialog(contentPane,"Word\"" + labelWord.getText() + "\"" + "was edited successfully!");
+            }
+            dispose();
+        }
     }
 
     private void onCancel() {

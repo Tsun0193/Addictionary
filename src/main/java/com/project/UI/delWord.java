@@ -58,11 +58,17 @@ public class delWord extends JDialog {
     }
 
     private void onOK() {
-        JOptionPane.showConfirmDialog(contentPane,"Are you sure about deleting this word?");
-        if(!DictionaryCommandline.deleteWord(DictionaryManagement.myTrie.findWordId(delWordText.getText()))){
-            JOptionPane.showMessageDialog(contentPane,"Word\"" + delWordText.getText() + "\"" + "is existed!");
+        int confirm = JOptionPane.showConfirmDialog(contentPane,"This action will make the database change!\n" +
+                "Are you sure about adding this word to dictionary?","Confirm",JOptionPane.YES_NO_OPTION);
+        if(confirm == JOptionPane.YES_OPTION){
+            if(!DictionaryCommandline.deleteWord(DictionaryManagement.myTrie.findWordId(delWordText.getText()))){
+                JOptionPane.showMessageDialog(contentPane,"Word\"" + delWordText.getText() + "\"" + "is existed!");
+            } else {
+                JOptionPane.showMessageDialog(contentPane,"Word\"" + delWordText.getText() + "\"" + "was deleted successfully!");
+            }
+            dispose();
         }
-        dispose();
+
     }
 
     private void onCancel() {

@@ -72,6 +72,14 @@ public class DictionaryApplication extends JFrame {
         DictionaryManagement.connect();
         DictionaryManagement.buildTrie();
 
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                DictionaryManagement.sortDatabase();
+                dispose();
+            }
+        });
+
         addWordButton.addActionListener(e -> {
             addWord dialog = new addWord();
             dialog.pack();

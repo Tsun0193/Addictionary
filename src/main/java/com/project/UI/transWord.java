@@ -67,9 +67,8 @@ public class transWord extends JDialog {
 
     private void setDefinitionText() {
         textPaneDefinition.setContentType("text/html");
-        Word word = new Word(labelWord.getText());
-        String s = DictionaryManagement.selectWordHtmlWithId(DictionaryManagement.getWordId(word));
-        textPaneDefinition.setText(DictionaryManagement.selectWordHtmlWithId(DictionaryManagement.getWordId(word)));
+        Pair<String,String> wordAndHtml = DictionaryCommandline.getExactWord(labelWord.getText());
+        textPaneDefinition.setText(wordAndHtml.getValue());
     }
 
 
