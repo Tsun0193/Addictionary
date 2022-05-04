@@ -1,7 +1,6 @@
 package com.project.UI;
 
 import com.project.dodung.*;
-
 import javax.swing.*;
 import java.awt.event.*;
 
@@ -15,25 +14,16 @@ public class delWord extends JDialog {
     private JTextField delWordText;
     private JPanel panelSuggestion;
     private JLabel labelSuggestion;
-    private JList listSuggestion;
+    private JList<String> listSuggestion;
 
     public delWord() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonApply);
 
+        buttonApply.addActionListener(e -> onOK());
 
-        buttonApply.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                onOK();
-            }
-        });
-
-        buttonCancel.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                onCancel();
-            }
-        });
+        buttonCancel.addActionListener(e -> onCancel());
 
         // call onCancel() when cross is clicked
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
@@ -44,12 +34,7 @@ public class delWord extends JDialog {
         });
 
         // call onCancel() on ESCAPE
-        contentPane.registerKeyboardAction(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                onCancel();
-            }
-        }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-
+        contentPane.registerKeyboardAction(e -> onCancel(), KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
         delWordText.addKeyListener(new KeyAdapter() {
             @Override
@@ -61,11 +46,12 @@ public class delWord extends JDialog {
                 listSuggestion.setModel(listModel);
             }
         });
+
         listSuggestion.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-                delWordText.setText(listSuggestion.getSelectedValue().toString());
+                delWordText.setText(listSuggestion.getSelectedValue());
             }
         });
 

@@ -59,7 +59,9 @@ public class completeWord extends JDialog {
     }
 
     private void onOK() {
-        // add your code here
+        DictionaryCommandline.deleteWord(DictionaryManagement.myTrie.findWordId(labelWord.getText()));
+        DictionaryCommandline.insertWord(labelWord.getText(),
+                editorPaneEditPronounce.getText(),editorPaneEditDefinition.getText());
         dispose();
     }
 
