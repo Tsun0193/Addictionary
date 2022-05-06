@@ -42,7 +42,7 @@ public class DictionaryApplication extends JFrame {
 
     private JTextField transWordText;
     private JButton editWordButton;
-    private JList suggestionTransWordList;
+    private JList<String> suggestionTransWordList;
     private JTextField warningTextField;
     private JPanel editWordPanel;
     private JEditorPane transSentenceEditorPane;
@@ -132,7 +132,7 @@ public class DictionaryApplication extends JFrame {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-                transWordText.setText(suggestionTransWordList.getSelectedValue().toString());
+                transWordText.setText(suggestionTransWordList.getSelectedValue());
             }
         });
     }
