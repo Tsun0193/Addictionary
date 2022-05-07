@@ -3,6 +3,9 @@ package com.project.UI;
 import com.project.dodung.*;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
+import java.awt.*;
 import java.awt.event.*;
 import java.util.Objects;
 
@@ -43,9 +46,10 @@ public class DictionaryApplication extends JFrame {
     private JTextField transWordText;
     private JButton editWordButton;
     private JList<String> suggestionTransWordList;
-    private JTextField warningTextField;
     private JPanel editWordPanel;
     private JEditorPane transSentenceEditorPane;
+    private JLabel signatureField;
+    private JLabel signatureTeam;
     /**
      * Input from Different Area.
      */
@@ -105,6 +109,8 @@ public class DictionaryApplication extends JFrame {
 
         });
 
+        Border b = new LineBorder(new Color(152, 158, 161), 1);
+        transSentenceEditorPane.setBorder(b);
 
         transSentenceButton.addActionListener(e -> {
             sentence = transSentenceEditorPane.getText();
@@ -150,4 +156,7 @@ public class DictionaryApplication extends JFrame {
         frame.setVisible(true);
     }
 
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
+    }
 }

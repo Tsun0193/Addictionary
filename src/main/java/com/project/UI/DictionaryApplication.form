@@ -1,49 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.project.UI.DictionaryApplication">
-  <grid id="27dc6" binding="appPanel" layout-manager="GridLayoutManager" row-count="7" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="appPanel" layout-manager="GridLayoutManager" row-count="7" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="33" y="34" width="766" height="426"/>
+      <xy x="33" y="5" width="1147" height="466"/>
     </constraints>
     <properties>
-      <background color="-1048653"/>
+      <background color="-7667457"/>
       <foreground color="-16777216"/>
-      <preferredSize width="640" height="480"/>
+      <preferredSize width="1280" height="720"/>
     </properties>
     <border type="none"/>
     <children>
-      <grid id="f383c" binding="transWordPanel" layout-manager="GridLayoutManager" row-count="3" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="f383c" binding="transWordPanel" layout-manager="GridLayoutManager" row-count="2" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-            <preferred-size width="268" height="59"/>
+          <grid row="1" column="1" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="1180" height="59"/>
           </grid>
         </constraints>
         <properties>
-          <background color="-1048653"/>
+          <background color="-1"/>
           <doubleBuffered value="true"/>
           <focusTraversalPolicyProvider value="true"/>
         </properties>
-        <border type="none"/>
+        <border type="etched"/>
         <children>
           <component id="f53a9" class="javax.swing.JLabel" binding="transWordLabel">
             <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
                 <preferred-size width="120" height="30"/>
               </grid>
             </constraints>
             <properties>
+              <horizontalAlignment value="0"/>
               <text value="Translate a word:"/>
-            </properties>
-          </component>
-          <component id="af02a" class="javax.swing.JButton" binding="transWordButton">
-            <constraints>
-              <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-16199"/>
-              <foreground color="-59"/>
-              <text value="Translate"/>
             </properties>
           </component>
           <component id="448be" class="javax.swing.JTextField" binding="transWordText">
@@ -53,12 +44,13 @@
               </grid>
             </constraints>
             <properties>
+              <caretColor color="-16777216"/>
               <text value="" noi18n="true"/>
             </properties>
           </component>
           <component id="6af00" class="javax.swing.JList" binding="suggestionTransWordList">
             <constraints>
-              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
+              <grid row="1" column="1" row-span="1" col-span="2" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="50"/>
               </grid>
             </constraints>
@@ -66,17 +58,28 @@
               <selectionMode value="1"/>
             </properties>
           </component>
+          <component id="af02a" class="javax.swing.JButton" binding="transWordButton">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-7667457"/>
+              <enabled value="true"/>
+              <foreground color="-59"/>
+              <text value="Translate"/>
+            </properties>
+          </component>
         </children>
       </grid>
       <grid id="3e717" binding="delWordPanel" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="228" height="59"/>
           </grid>
         </constraints>
         <properties>
-          <background color="-1048653"/>
+          <background color="-1"/>
         </properties>
         <border type="etched"/>
         <children>
@@ -106,12 +109,12 @@
       <grid id="8bb76" binding="addWordPanel" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="228" height="59"/>
           </grid>
         </constraints>
         <properties>
-          <background color="-1048653"/>
+          <background color="-1"/>
         </properties>
         <border type="etched"/>
         <children>
@@ -136,50 +139,57 @@
       <grid id="14ea3" binding="transSentencePanel" layout-manager="GridLayoutManager" row-count="2" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="2" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="1" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <background color="-1048653"/>
+          <background color="-1"/>
+          <foreground color="-1"/>
         </properties>
-        <border type="none"/>
+        <border type="etched"/>
         <children>
           <component id="3b988" class="javax.swing.JButton" binding="transSentenceButton">
             <constraints>
-              <grid row="1" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="0" column="2" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <background color="-16199"/>
+              <background color="-7667457"/>
+              <enabled value="true"/>
               <foreground color="-59"/>
+              <inheritsPopupMenu value="false"/>
               <text value="Translate"/>
-            </properties>
-          </component>
-          <component id="ce91f" class="javax.swing.JLabel" binding="transSentenceLabel">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                <preferred-size width="110" height="30"/>
-              </grid>
-            </constraints>
-            <properties>
-              <text value="Translate a sentence"/>
             </properties>
           </component>
           <component id="238c3" class="javax.swing.JEditorPane" binding="transSentenceEditorPane">
             <constraints>
-              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+              <grid row="0" column="1" row-span="2" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="50"/>
               </grid>
             </constraints>
-            <properties/>
+            <properties>
+              <caretColor color="-16777216"/>
+              <text value=""/>
+            </properties>
+          </component>
+          <component id="ce91f" class="javax.swing.JLabel" binding="transSentenceLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="120" height="30"/>
+              </grid>
+            </constraints>
+            <properties>
+              <opaque value="true"/>
+              <text value=" Translate a sentence:"/>
+            </properties>
           </component>
         </children>
       </grid>
       <grid id="cf2aa" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="4" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="0" row-span="1" col-span="5" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <background color="-1048653"/>
+          <background color="-7667457"/>
         </properties>
         <border type="none"/>
         <children>
@@ -188,28 +198,22 @@
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <foreground color="-1"/>
               <text value="-------------------------Other Options-------------------------"/>
               <verifyInputWhenFocusTarget value="false"/>
             </properties>
           </component>
         </children>
       </grid>
-      <vspacer id="db82d">
-        <constraints>
-          <grid row="3" column="0" row-span="1" col-span="3" vsize-policy="2" hsize-policy="1" anchor="1" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="456" height="20"/>
-          </grid>
-        </constraints>
-      </vspacer>
       <grid id="1b943" binding="editWordPanel" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+          <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="228" height="59"/>
           </grid>
         </constraints>
         <properties>
-          <background color="-1048653"/>
+          <background color="-1"/>
         </properties>
         <border type="etched"/>
         <children>
@@ -231,26 +235,54 @@
           </component>
         </children>
       </grid>
-      <component id="1548" class="javax.swing.JTextField" binding="warningTextField">
+      <component id="8f44d" class="javax.swing.JLabel" binding="appLabel">
         <constraints>
-          <grid row="6" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
+          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="-1" height="120"/>
           </grid>
         </constraints>
         <properties>
-          <font name="Times New Roman" size="16" style="1"/>
-          <text value="Warning: The functions above will affect the original database. Use with caution!"/>
-        </properties>
-      </component>
-      <component id="8f44d" class="javax.swing.JLabel" binding="appLabel">
-        <constraints>
-          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
           <font name="VNI-Vivi" size="36"/>
+          <foreground color="-1"/>
           <horizontalAlignment value="0"/>
           <horizontalTextPosition value="0"/>
           <text value="Dictionary"/>
+        </properties>
+      </component>
+      <hspacer id="5ffb1">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <hspacer id="44b7b">
+        <constraints>
+          <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <hspacer id="72b9d">
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="5" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="-1" height="50"/>
+          </grid>
+        </constraints>
+      </hspacer>
+      <component id="bbfda" class="javax.swing.JLabel" binding="signatureField">
+        <constraints>
+          <grid row="6" column="3" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-1"/>
+          <horizontalAlignment value="11"/>
+          <text value="https://github.com/Tsun0193/Addictionary     "/>
+        </properties>
+      </component>
+      <component id="b7aa4" class="javax.swing.JLabel" binding="signatureTeam">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-1"/>
+          <text value="     INT_2204_20: Team 4"/>
         </properties>
       </component>
     </children>
