@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2bb3ffc9-46c0-4061-818b-8d974bfa4f25" name="Changes" comment="build UI: showConfirmDialog and sort after close">
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dict_hh.db" beforeDir="false" afterPath="$PROJECT_DIR$/dict_hh.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/DictionaryApplication.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/DictionaryApplication.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/DictionaryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/DictionaryApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/addWord.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/addWord.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/completeWord.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/completeWord.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/completeWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/completeWord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/delWord.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/delWord.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/editWord.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/editWord.form" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +36,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true"
+  }
+}]]></component>
   <component name="RunManager" selected="Application.DictionaryApplication">
     <configuration name="DictionaryApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
