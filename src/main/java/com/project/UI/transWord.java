@@ -1,6 +1,6 @@
 package com.project.UI;
 
-import com.project.dodung.*;
+import com.project.dictManagement.*;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -70,10 +70,4 @@ public class transWord extends JDialog {
     }
 
 
-    public static void main(String[] args) {
-        transWord dialog = new transWord();
-        dialog.pack();
-        dialog.setVisible(true);
-        System.exit(0);
-    }
 }

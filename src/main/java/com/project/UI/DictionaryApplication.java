@@ -1,6 +1,6 @@
 package com.project.UI;
 
-import com.project.dodung.*;
+import com.project.dictManagement.*;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -79,7 +79,7 @@ public class DictionaryApplication extends JFrame {
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
-                DictionaryManagement.sortDatabase();
+                DictionaryCommandline.close();
                 dispose();
             }
         });
@@ -151,7 +151,7 @@ public class DictionaryApplication extends JFrame {
         return sentence;
     }
 
-    public static void main(String[] args){
+    public static void runApplication(){
         JFrame frame = new DictionaryApplication("Dictionary pro vjp");
         frame.setVisible(true);
     }

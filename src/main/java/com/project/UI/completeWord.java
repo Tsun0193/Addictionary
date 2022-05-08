@@ -1,6 +1,6 @@
 package com.project.UI;
 
-import com.project.dodung.*;
+import com.project.dictManagement.*;
 
 
 import javax.swing.*;
@@ -76,10 +76,4 @@ public class completeWord extends JDialog {
         dispose();
     }
 
-    public static void main(String[] args) {
-        completeWord dialog = new completeWord();
-        dialog.pack();
-        dialog.setVisible(true);
-        System.exit(0);
-    }
 }

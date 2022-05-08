@@ -5,16 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2bb3ffc9-46c0-4061-818b-8d974bfa4f25" name="Changes" comment="build UI: mini change">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/main/main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dict_hh.db" beforeDir="false" afterPath="$PROJECT_DIR$/dict_hh.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/transSentence.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/transSentence.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/DictionaryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/DictionaryApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/UI_Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/addWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/addWord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/completeWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/completeWord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/delWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/delWord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/editWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/editWord.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/transSentence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/transSentence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/transWord.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/transWord.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/transWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/transWord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/dodung/DictionaryCommandline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/dictManagement/DictionaryCommandline.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/dodung/DictionaryManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/dictManagement/DictionaryManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/dodung/DoDungMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/dodung/Pair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/dictManagement/Pair.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/dodung/Trie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/dictManagement/Trie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/dodung/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/dictManagement/Word.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/dodung/dictionaryInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/dictManagement/dictionaryInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/dodung/existException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/dictManagement/existException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/dodung/nonExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/dictManagement/nonExistException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/main/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -33,7 +56,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="RunManager" selected="Application.DictionaryApplication">
+  <component name="RunManager" selected="Application.main">
     <configuration name="DictionaryApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -50,11 +73,11 @@
       </method>
     </configuration>
     <configuration name="DictionaryManagement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.project.dodung.DictionaryManagement" />
+      <option name="MAIN_CLASS_NAME" value="com.project.dictManagement.DictionaryManagement" />
       <module name="untitled" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.project.dodung.*" />
+          <option name="PATTERN" value="com.project.dictManagement.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -67,7 +90,7 @@
       <module name="untitled" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.project.dodung.*" />
+          <option name="PATTERN" value="com.project.dictManagement.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -88,12 +111,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="delWord" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.project.UI.delWord" />
+    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.project.main.main" />
       <module name="untitled" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.project.UI.*" />
+          <option name="PATTERN" value="com.project.main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -106,15 +129,15 @@
       <item itemvalue="Application.DictionaryManagement" />
       <item itemvalue="Application.DoDungMain" />
       <item itemvalue="Application.addWord" />
-      <item itemvalue="Application.delWord" />
+      <item itemvalue="Application.main" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.main" />
         <item itemvalue="Application.DictionaryApplication" />
         <item itemvalue="Application.addWord" />
         <item itemvalue="Application.DictionaryManagement" />
         <item itemvalue="Application.DoDungMain" />
-        <item itemvalue="Application.delWord" />
       </list>
     </recent_temporary>
   </component>

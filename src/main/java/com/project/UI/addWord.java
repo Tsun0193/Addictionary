@@ -1,5 +1,5 @@
 package com.project.UI;
-import com.project.dodung.*;
+import com.project.dictManagement.*;
 import javax.swing.*;
 import java.awt.event.*;
 

@@ -1,6 +1,6 @@
 package com.project.UI;
 
-import com.project.dodung.DictionaryCommandline;
+import com.project.dictManagement.DictionaryCommandline;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -61,10 +61,5 @@ public class transSentence extends JDialog {
         dispose();
     }
 
-    public static void main(String[] args) {
-        transSentence dialog = new transSentence();
-        dialog.pack();
-        dialog.setVisible(true);
-        System.exit(0);
-    }
+
 }

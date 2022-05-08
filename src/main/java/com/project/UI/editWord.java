@@ -1,6 +1,6 @@
 package com.project.UI;
 
-import com.project.dodung.DictionaryManagement;
+import com.project.dictManagement.DictionaryManagement;
 
 import javax.swing.*;
 import java.awt.event.*;
@@ -73,10 +73,4 @@ public class editWord extends JDialog {
         dispose();
     }
 
-    public static void main(String[] args) {
-        editWord dialog = new editWord();
-        dialog.pack();
-        dialog.setVisible(true);
-        System.exit(0);
-    }
 }
