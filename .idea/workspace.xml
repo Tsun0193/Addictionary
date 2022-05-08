@@ -5,27 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2bb3ffc9-46c0-4061-818b-8d974bfa4f25" name="Changes" comment="build UI: mini change">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/main/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dict_hh.db" beforeDir="false" afterPath="$PROJECT_DIR$/dict_hh.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/DictionaryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/DictionaryApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/UI_Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/addWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/addWord.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/completeWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/completeWord.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/delWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/delWord.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/editWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/editWord.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/transSentence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/transSentence.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/transWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/transWord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/dodung/DictionaryCommandline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/dictManagement/DictionaryCommandline.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/dodung/DictionaryManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/dictManagement/DictionaryManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/dodung/DoDungMain.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/dodung/Pair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/dictManagement/Pair.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/dodung/Trie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/dictManagement/Trie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/dodung/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/dictManagement/Word.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/dodung/dictionaryInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/dictManagement/dictionaryInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/dodung/existException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/dictManagement/existException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/dodung/nonExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/dictManagement/nonExistException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/main/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +45,24 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/target" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propGUI" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\IdeaProjects\Addictionary1\target" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn dependency:tree -Ddetail=true" />
+      <command value="mvn package dependency:tree -Ddetail=true" />
+    </option>
   </component>
   <component name="RunManager" selected="Application.main">
     <configuration name="DictionaryApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
