@@ -16,16 +16,14 @@ public class transWord extends JDialog {
     private JTextPane textPaneDefinition;
     private JLabel labelTitle;
     private JButton buttonSpeech;
-    private JLabel labelTarget;
-    private JLabel labelWord;
-    private JPanel panelTarget;
+    private String targetWord;
 
 
     public transWord() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
-        labelWord.setText(DictionaryApplication.transStr);
+        targetWord =  DictionaryApplication.transStr;
         setDefinitionText();
 
         buttonOK.addActionListener(new ActionListener() {
@@ -43,7 +41,7 @@ public class transWord extends JDialog {
         buttonSpeech.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                DictionaryCommandline.speak(labelWord.getText());
+                DictionaryCommandline.speak(targetWord);
             }
         });
     }
@@ -55,7 +53,7 @@ public class transWord extends JDialog {
 
     private void onEdit() {
         // add your code here if necessary
-        DictionaryApplication.editStr = DictionaryApplication.transStr;
+        DictionaryApplication.editStr = targetWord;
         DictionaryApplication.editDefinition = textPaneDefinition.getText();
         System.out.println(DictionaryApplication.editDefinition);
         completeWord dialog = new completeWord();
@@ -67,7 +65,7 @@ public class transWord extends JDialog {
 
     private void setDefinitionText() {
         textPaneDefinition.setContentType("text/html");
-        Pair<String,String> wordAndHtml = DictionaryCommandline.getExactWord(labelWord.getText());
+        Pair<String,String> wordAndHtml = DictionaryCommandline.getExactWord(DictionaryApplication.transStr);
         textPaneDefinition.setText(wordAndHtml.getValue());
     }
 

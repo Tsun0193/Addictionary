@@ -6,6 +6,8 @@
       <xy x="48" y="54" width="436" height="297"/>
     </constraints>
     <properties>
+      <background color="-7732993"/>
+      <foreground color="-4473925"/>
       <preferredSize width="480" height="480"/>
     </properties>
     <border type="none"/>

@@ -4,9 +4,6 @@ import com.project.dodung.*;
 
 
 import javax.swing.*;
-import javax.swing.border.Border;
-import javax.swing.border.LineBorder;
-import java.awt.*;
 import java.awt.event.*;
 
 public class completeWord extends JDialog {
@@ -20,10 +17,10 @@ public class completeWord extends JDialog {
     private JPanel panelEditDefinition;
     private JLabel labelPronounce;
     private JLabel labelEditDefinition;
-    private JEditorPane editorPaneEditPronounce;
     private JEditorPane editorPaneEditDefinition;
     private JLabel labelTarget;
     private JLabel labelWord;
+    private JTextField textFieldEditPronounce;
 
     public completeWord() {
 
@@ -67,7 +64,7 @@ public class completeWord extends JDialog {
         if(confirm == JOptionPane.YES_OPTION) {
             if(DictionaryCommandline.deleteWord(DictionaryManagement.myTrie.findWordId(labelWord.getText()))
                     && DictionaryCommandline.insertWord(labelWord.getText(),
-                    editorPaneEditPronounce.getText(), editorPaneEditDefinition.getText())){
+                    textFieldEditPronounce.getText(), editorPaneEditDefinition.getText())){
                 JOptionPane.showMessageDialog(contentPane,"Word\"" + labelWord.getText() + "\"" + "was edited successfully!");
             }
             dispose();

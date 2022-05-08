@@ -90,17 +90,13 @@
                   <text value="Edit pronounciation:"/>
                 </properties>
               </component>
-              <component id="d9fa5" class="javax.swing.JEditorPane" binding="editorPaneEditPronounce">
+              <component id="3e6cd" class="javax.swing.JTextField" binding="textFieldEditPronounce">
                 <constraints>
-                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                    <preferred-size width="200" height="30"/>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
                   </grid>
                 </constraints>
-                <properties>
-                  <background color="-2772225"/>
-                  <selectedTextColor color="-59"/>
-                  <selectionColor color="-52377"/>
-                </properties>
+                <properties/>
               </component>
             </children>
           </grid>

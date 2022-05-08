@@ -15,8 +15,8 @@ public class addWord extends JDialog {
     private JLabel labelPronounce;
     private JPanel panelNewDefinition;
     private JLabel labelDefinition;
-    private JTextField textFieldAddDefinition;
     private JPanel panelWordPronounce;
+    private JEditorPane editorPaneAddDefinition;
 
     public addWord() {
         setContentPane(contentPane);
@@ -45,7 +45,7 @@ public class addWord extends JDialog {
                 "Are you sure about adding this word to dictionary?","Confirm",JOptionPane.YES_NO_OPTION);
         if(confirm == JOptionPane.YES_OPTION) {
             if (!DictionaryCommandline.insertWord(textFieldAddWord.getText(), textFieldAddPronounce.getText()
-                    , textFieldAddDefinition.getText())) {
+                    , editorPaneAddDefinition.getText())) {
                 JOptionPane.showMessageDialog(contentPane,
                         "Word\"" + textFieldAddWord.getText() + "\"" + "is existed!");
             } else {
