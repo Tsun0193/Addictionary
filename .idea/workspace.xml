@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bb3ffc9-46c0-4061-818b-8d974bfa4f25" name="Changes" comment="build UI: mini change" />
+    <list default="true" id="2bb3ffc9-46c0-4061-818b-8d974bfa4f25" name="Changes" comment="build UI: mini change">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dict_hh.db" beforeDir="false" afterPath="$PROJECT_DIR$/dict_hh.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/transSentence.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/transSentence.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/transSentence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/transSentence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/UI/transWord.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/UI/transWord.form" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

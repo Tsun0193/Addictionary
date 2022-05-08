@@ -3,6 +3,9 @@ package com.project.UI;
 import com.project.dodung.DictionaryCommandline;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
+import java.awt.*;
 import java.awt.event.*;
 
 public class transSentence extends JDialog {
@@ -25,6 +28,10 @@ public class transSentence extends JDialog {
         getRootPane().setDefaultButton(buttonOK);
         textAreaTargetSentence.setText(DictionaryApplication.sentence);
         textAreaTransSentence.setText(DictionaryCommandline.sentenceTranslator(DictionaryApplication.sentence));
+        Border b = new LineBorder(new Color(152,158,161), 1);
+        textAreaTransSentence.setBorder(b);
+        textAreaTargetSentence.setBorder(b);
+
 
         buttonOK.addActionListener(e -> onOK());
 
